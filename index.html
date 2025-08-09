@@ -39,22 +39,21 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
+}
 
-  .link-row {
-    display: flex;
-    justify-content: space-between;
+.link-row {
+    display: grid;
+    grid-template-columns: 1fr 150px; /* label takes remaining space, button fixed width */
     align-items: center;
-    gap: 8px;
-  }
+    gap: 10px;
+}
 
-  .link-label {
+.link-label {
     font-weight: bold;
-    text-align: left;
-    flex: 1;
-  }
+    text-align: right; /* right align the text */
+}
 
-  .btn {
+.btn {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 3px;
@@ -64,9 +63,9 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
-    width: 150px; /* Forces all buttons same width */
+    width: 100%; /* fills the fixed column */
     text-align: center;
-  }
+}
 
   /* Button colors */
   .btn-resume { background: #4b0082; }
