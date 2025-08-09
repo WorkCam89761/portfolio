@@ -67,17 +67,20 @@
     margin-bottom: 0.5rem; /* Extra space after line breaks */
     display: block;       /* Makes the spacing work */
     content: "";         /* Required for spacing */
-  }
-   .intro-section {
-    margin: 1.5rem auto;
-    max-width: 600px;
-    text-align: center;
+ .intro-section {
+    margin: 1.5rem auto;       /* Centers the block horizontally */
+    max-width: 600px;         /* Limits line length */
+    text-align: center;       /* Centers text within the block */
     line-height: 1.6;
+    padding: 0 20px;          /* Adds some padding on sides */
+    box-sizing: border-box;   /* Includes padding in width calculation */
   }
-  
+
   .intro-section p {
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: center;       /* Ensures all text is centered */
+    display: block;           /* Makes sure paragraphs behave as blocks */
+    width: 100%;             /* Takes full width of container */
   }
 </style>
 </head>
