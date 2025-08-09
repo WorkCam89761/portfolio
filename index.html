@@ -26,29 +26,26 @@
   }
   .links {
     margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: 550px; /* Increased from 500px */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Each link row */
   .link-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 500px; /* Adjust this to control maximum width */
-    margin: 8px 0;
-    padding: 0 20px; /* Adds some side padding */
+  display: grid; /* Switch from flex to grid for better control */
+  grid-template-columns: 1fr auto; /* Text takes space, button hugs right */
+  gap: 30px; /* This will DEFINITELY control the spacing */
+  align-items: center;
+  margin: 8px 0;
+  padding: 0 20px;
   }
 
   /* Text labels */
   .link-row strong {
-    flex: 1;
-    min-width: 150px; /* Ensures all labels align */
-    text-align: left;
-    margin-right: 15px; /* Space between text and button */
-    font-weight: bold; /* Explicit bold */
+     font-weight: bold;
+  white-space: nowrap; /* Prevents text from wrapping */
   }
 
   /* Buttons */
@@ -62,6 +59,7 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap; /* Prevents button text from wrapping */
+    min-width: 120px
   }
   
   /* Your existing button colors */
