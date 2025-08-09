@@ -53,6 +53,21 @@
   .btn-linkedin { background: #0072b1; }
   .btn-youtube { background: #ff0000; }
   .btn-certification { background: #009B77; }
+  .education-section {
+    font-size: 1.1rem;  /* Slightly bigger text */
+    line-height: 1.8;    /* More vertical spacing between lines */
+    margin-bottom: 1.5rem; /* Space after this section */
+  }
+  
+  .education-section strong {
+    font-weight: 600;    /* Semi-bold weight */
+  }
+  
+  .education-section br {
+    margin-bottom: 0.5rem; /* Extra space after line breaks */
+    display: block;       /* Makes the spacing work */
+    content: "";         /* Required for spacing */
+  }
 </style>
 </head>
 <body>
@@ -60,9 +75,10 @@
 <img src="test.jpg" alt="Cameron Morin" class="profile" />
 <h1>Cameron Morin</h1>
 
-<p>Associate of Applied Science, Computer Systems & Information Technology</p>
-<p>River Parishes Community College – Class of 2025</p>
-<p>New Grad Seeking Software & IT Opportunities 🚀</p>
+<p class="education-section">
+  <strong>Associate of Applied Science, Computer Systems & Information Technology<br>
+  River Parishes Community College – Class of 2025</strong><br>
+  New Grad Seeking Software & IT Opportunities 🚀</p>
 <p>Interested in software development, systems administration, and building efficient, user-friendly technology solutions.</p>
 <p>I've dabbled in everything from homelabbing, crypto-currency mining, linux, programming and scripting.</p>
 
