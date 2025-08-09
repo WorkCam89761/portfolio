@@ -6,45 +6,53 @@
 <title>Cameron Morin</title>
 <style>
   body {
-      /* Reapply your styles below */
-      background: #dcdcdc;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 2rem;
-      color: #333;
+    background: #dcdcdc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 2rem;
+    color: #333;
   }
+
+  /* Profile image centered */
   img.profile {
     width: 320px;
     height: 320px;
     border-radius: 50%;
     box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    display: block;
+    margin: 0 auto;
   }
+
   h1 {
     margin: 1rem 0 0.2rem 0;
   }
+
   p {
     margin: 0.3rem 0;
   }
-  
-  /* Fixed and improved links section */
+
+  /* Links section centered with equal button sizes */
   .links {
     margin: 2rem auto;
     width: 100%;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  /* BEST OPTION: CSS Grid version */
   .link-row {
-    display: grid;
-    grid-template-columns: minmax(120px, 1fr) auto;
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
   }
 
   .link-label {
     font-weight: bold;
+    text-align: left;
+    flex: 1;
   }
+
   .btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -55,34 +63,37 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
+    width: 150px; /* Forces all buttons same width */
+    text-align: center;
   }
-  
+
   /* Button colors */
   .btn-resume { background: #4b0082; }
   .btn-certification { background: #009B77; }
-  .btn-email { background: #dcb84f; }
+  .btn-email { background: #dcb84f; color: #222; }
   .btn-projects { background: #333; }
   .btn-linkedin { background: #0072b1; }
   .btn-youtube { background: #ff0000; }
-  
+
+  /* Education section */
   .education-section {
     font-size: 1.25rem;
     line-height: 1.25;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
   }
-  
+
   .education-section strong {
     font-weight: 200;
   }
-  
+
   .education-section br {
     margin-bottom: 0.5rem;
     display: block;
     content: "";
   }
-  
+
   .section p {
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1.5rem;
     line-height: 1.6;
   }
 </style>
@@ -94,7 +105,8 @@
 
 <p class="education-section">
   <strong>Associate of Applied Science, Computer Systems & Information Technology<br>
-  River Parishes Community College – Class of 2025</strong></p>
+  River Parishes Community College – Class of 2025</strong>
+</p>
 
 <!-- Sections -->
 <div class="section">
@@ -109,7 +121,7 @@
   <p>I've dabbled in everything from homelabbing, crypto-currency mining, Linux, programming and scripting.</p>
 </div>
 
-<!-- Updated links section with proper alignment -->
+<!-- Links -->
 <div class="links">
   <div class="link-row">
     <span class="link-label">My Resume</span>
@@ -117,7 +129,7 @@
   </div>
   <div class="link-row">
     <span class="link-label">My Certifications</span>
-    <button class="btn btn-certification" onclick="window.open('Cameron Morin Resume.docx')">Certification 🎖</button>
+    <button class="btn btn-certification" onclick="window.open('certifications.pdf')">Certification 🎖</button>
   </div>
   <div class="link-row">
     <span class="link-label">My Email</span>
