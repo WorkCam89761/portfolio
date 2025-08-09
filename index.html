@@ -1,88 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cameron Morin</title>
-    <style>
-        body {
-            font-family: 'Helvetica', 'Arial', sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        h1 {
-            margin-bottom: 5px;
-        }
-        
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ddd;
-            margin: 20px 0;
-        }
-        
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 15px 0;
-        }
-        
-        .contact-links a {
-            font-weight: bold;
-        }
-        
-        .highlight {
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Name - Personal Website</title>
+<style>
+  body {
+    background: #dcdcdc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 2rem;
+    color: #333;
+  }
+  img.profile {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  }
+  h1 {
+    margin: 1rem 0 0.2rem 0;
+  }
+  p {
+    margin: 0.3rem 0;
+  }
+  .links {
+    margin-top: 2rem;
+    display: inline-block;
+    text-align: left;
+  }
+  .link-row {
+    margin: 8px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+  .btn-projects { background: #333; }
+  .btn-resume { background: #4b0082; }
+  .btn-email { background: #dcb84f; color: #222; }
+  .btn-linkedin { background: #0072b1; }
+  .btn-youtube { background: #ff0000; }
+</style>
 </head>
 <body>
-    <h1>Cameron Morin</h1>
-    
-    <p>Graduate – Associate of Applied Science, Computer Systems & Information Technology
-from River Parishes Community College – Class of May 2025<br>
-    Seeking New Grad Software & IT Opportunities 🚀</p>
-    
-    <p>Interested in software development, systems administration, and building efficient, user-friendly technology solutions.</p>
-    
-    <p>I've dabbled in everything from <span class="highlight">homelabbing</span>, <span class="highlight">crypto-currency mining</span>, <span class="highlight">linux</span>, and <span class="highlight">scripts</span>.</p>
-    
-    <hr>
-    
-    <h2>My Resume</h2>
-    <div class="contact-links">
-        <a href="mailto:workcam89761@gmail.com">My Email</a>
-        <a href="/projects">Projects</a> <!-- Changed from GitHub to Projects -->
-        <a href="https://www.linkedin.com/in/cameron-morin-350731344/">My LinkedIn</a>
-        <a href="https://www.youtube.com/@TheMiningMersie">Newest Video</a>
-    </div>
-    
-    <p>In my spare time I also do professional cinematography/video editing</p>
-    
-    <hr>
-    
-    <h3>RESUME</h3>
-    <h3>EMAIL</h3>
-    <h3>PROJECTS</h3>
-    <h3>LINKEDIN</h3>
-    <h3>YOUTUBE</h3>
-    
-    <hr>
-    
-    <p>Fun Note: My first big project was a microservice-based (prebating kubernetes) Minecraft server made in grade 8 (since 2019)</p>
+
+<img src="your-photo.jpg" alt="Your Name" class="profile" />
+<h1>Your Name</h1>
+
+<p>4th year University XYZ Software Engineering Student</p>
+<p>Seeking 2025 New Grad Opportunities 🚀</p>
+<p>Interested in Software Engineering, AI, and more.</p>
+<p>Previously @ Company1, Company2, and Company3</p>
+<p>🏅 also love doing hackathons 🏅</p>
+
+<div class="links">
+  <div class="link-row">
+    My Resume
+    <button class="btn btn-resume" onclick="window.open('resume.pdf')">Resume 📜</button>
+  </div>
+  <div class="link-row">
+    My Email
+    <button class="btn btn-email" onclick="window.location.href='mailto:your.email@example.com'">Email 📧</button>
+  </div>
+  <div class="link-row">
+    My Projects
+    <button class="btn btn-projects" onclick="window.open('https://yourprojectsurl.com')">Projects 📁</button>
+  </div>
+  <div class="link-row">
+    My LinkedIn
+    <button class="btn btn-linkedin" onclick="window.open('https://linkedin.com/in/yourprofile')">LinkedIn 🌐</button>
+  </div>
+  <div class="link-row">
+    Newest Video
+    <button class="btn btn-youtube" onclick="window.open('https://youtube.com/yourchannel')">YouTube 🎥</button>
+  </div>
+</div>
+
+<p style="margin-top: 2rem; font-size: 0.75rem; color: #666;">
+  In my spare time I also do professional cinematography/video editing 🎬<br />
+  Fun-fact: My first big project was a microservice-based Minecraft server I made in grade 8 (circa 2015)
+</p>
+
 </body>
 </html>
