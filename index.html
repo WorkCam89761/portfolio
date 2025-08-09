@@ -25,16 +25,13 @@
     margin: 0.3rem 0;
   }
   .link-row {
-    margin: 8px 0;
-    font-weight: bold;
-    text-shadow: 1px 1px 0 #ccc;
-    display: flex;
-    justify-content: space-between; /* This pushes button to right */
-    align-items: center;
-    width: 100%; /* Ensure full width */
-    max-width: 500px; /* Optional: set max width for better alignment */
-    margin-left: auto;
-    margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr auto; /* Text left, button right */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 8px auto;
   }
   
   /* Optional: Add some padding to the container */
