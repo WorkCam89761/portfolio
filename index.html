@@ -32,24 +32,30 @@
   }
 
   /* Links section centered with equal button sizes */
+.links {
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* keeps each row centered */
+}
+
 .link-row {
     display: grid;
-    grid-template-columns: 1fr 150px;
+    grid-template-columns: auto 150px; /* shrink first column to fit content */
     align-items: center;
-    gap: 8px; /* default gap for desktop */
+    gap: 8px; /* default desktop gap */
 }
 
-/* On smaller screens, reduce the gap */
-@media (max-width: 600px) {
-    .link-row {
-        gap: 4px; /* tighter gap for mobile */
-    }
-}
+/* Label right-aligned inside its own column */
 .link-label {
     font-weight: bold;
-    text-align: right; /* right align the text */
+    text-align: right;
 }
 
+/* Buttons always same size */
 .btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -60,10 +66,16 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
-    width: 100%; /* fills the fixed column */
+    width: 150px; 
     text-align: center;
 }
 
+/* Mobile: tighten gap */
+@media (max-width: 600px) {
+    .link-row {
+        gap: 4px;
+    }
+}
   /* Button colors */
   .btn-resume { background: #4b0082; }
   .btn-certification { background: #009B77; }
