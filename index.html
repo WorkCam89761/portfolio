@@ -39,23 +39,21 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center; /* keeps each row centered */
 }
 
 .link-row {
     display: grid;
-    grid-template-columns: auto 150px; /* shrink first column to fit content */
+    grid-template-columns: 1fr 150px; /* first column fills space, second is fixed */
     align-items: center;
-    gap: 8px; /* default desktop gap */
+    gap: 8px; /* default gap */
+    width: 100%; /* make each row stretch full width so it's centered */
 }
 
-/* Label right-aligned inside its own column */
 .link-label {
     font-weight: bold;
-    text-align: right;
+    text-align: right; /* keeps label near button */
 }
 
-/* Buttons always same size */
 .btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -66,16 +64,17 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
-    width: 150px; 
+    width: 100%; /* fills its column */
     text-align: center;
 }
 
-/* Mobile: tighten gap */
+/* Mobile: smaller gap */
 @media (max-width: 600px) {
     .link-row {
         gap: 4px;
     }
 }
+
   /* Button colors */
   .btn-resume { background: #4b0082; }
   .btn-certification { background: #009B77; }
