@@ -24,18 +24,23 @@
   p {
     margin: 0.3rem 0;
   }
-  .links {
-    margin-top: 1.5rem;
-    display: inline-block;
-    text-align: left;
-  }
   .link-row {
     margin: 8px 0;
     font-weight: bold;
     text-shadow: 1px 1px 0 #ccc;
     display: flex;
+    justify-content: space-between; /* This pushes button to right */
     align-items: center;
-    gap: 10px;
+    width: 100%; /* Ensure full width */
+    max-width: 500px; /* Optional: set max width for better alignment */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Optional: Add some padding to the container */
+  .links {
+    margin-top: 2rem;
+    padding: 0 1rem; /* Adds some side padding */
   }
   .btn {
     padding: 0.5rem 1rem;
