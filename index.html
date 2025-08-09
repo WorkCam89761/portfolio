@@ -24,24 +24,34 @@
   p {
     margin: 0.3rem 0;
   }
-  .link-row {
-  display: grid;
-  grid-template-columns: 1fr auto; /* Text left, button right */
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 500px;
-  margin: 8px auto;
-  font-weight: bold;
-  text-shadow: 1px 1px 0 #ccc;
-  }
-  
-  /* Optional: Add some padding to the container */
   .links {
     margin-top: 2rem;
-    display: inline-block;
-    padding: 0 1rem; /* Adds some side padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  /* Each link row */
+  .link-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Adjust this to control maximum width */
+    margin: 8px 0;
+    padding: 0 20px; /* Adds some side padding */
+  }
+
+  /* Text labels */
+  .link-row strong {
+    flex: 1;
+    min-width: 150px; /* Ensures all labels align */
+    text-align: left;
+    margin-right: 30px; /* Space between text and button */
+    font-weight: bold; /* Explicit bold */
+  }
+
+  /* Buttons */
   .btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -51,13 +61,16 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.85rem;
+    white-space: nowrap; /* Prevents button text from wrapping */
   }
-  .btn-projects { background: #333; }
+  
+  /* Your existing button colors */
   .btn-resume { background: #4b0082; }
+  .btn-certification { background: #009B77; }
   .btn-email { background: #dcb84f; }
+  .btn-projects { background: #333; }
   .btn-linkedin { background: #0072b1; }
   .btn-youtube { background: #ff0000; }
-  .btn-certification { background: #009B77; }
   .education-section {
     font-size: 1.25rem;
     line-height: 1.25;
@@ -112,7 +125,7 @@
     <strong>My Resume</strong>
     <button class="btn btn-resume" onclick="window.open('Cameron Morin Resume.docx')">Resume 📜</button>
   </div>
-   <div class="link-row">
+  <div class="link-row">
     <strong>My Certifications</strong>
     <button class="btn btn-certification" onclick="window.open('Cameron Morin Resume.docx')">Certification 🎖</button>
   </div>
@@ -129,7 +142,7 @@
     <button class="btn btn-linkedin" onclick="window.open('https://www.linkedin.com/in/cameron-morin-350731344/')">LinkedIn 🌐</button>
   </div>
   <div class="link-row">
-    <strong>Youtube</strong>
+    <strong>YouTube</strong>
     <button class="btn btn-youtube" onclick="window.open('https://www.youtube.com/@TheMiningMersie')">YouTube 🎥</button>
   </div>
 </div>
