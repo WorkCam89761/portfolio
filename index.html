@@ -24,31 +24,33 @@
   p {
     margin: 0.3rem 0;
   }
+ /* Center the entire links section */
   .links {
-    margin-top: 2rem;
-    width: 100%;
-    max-width: 550px; /* Increased from 500px */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2rem auto 0 auto; /* Top | Horizontal | Bottom */
+    width: fit-content; /* Shrink to fit content */
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to left within centered container */
   }
 
-  /* Each link row */
+  /* Link row styling */
   .link-row {
-  display: grid; /* Switch from flex to grid for better control */
-  grid-template-columns: 1fr auto; /* Text takes space, button hugs right */
-  gap: 30px; /* This will DEFINITELY control the spacing */
-  align-items: center;
-  margin: 8px 0;
-  padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 8px 0;
+    gap: 30px; /* Space between text and button */
   }
 
   /* Text labels */
   .link-row strong {
-     font-weight: bold;
-  white-space: nowrap; /* Prevents text from wrapping */
+    font-weight: bold;
+    min-width: 150px; /* Consistent width for all labels */
   }
 
-  /* Buttons */
+  /* Buttons (keep your existing styles) */
   .btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -58,9 +60,7 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.85rem;
-    white-space: nowrap; /* Prevents button text from wrapping */
-    min-width: 120px
-  }
+    white-space: nowrap;
   
   /* Your existing button colors */
   .btn-resume { background: #4b0082; }
