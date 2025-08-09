@@ -32,29 +32,28 @@
   }
 
   /* Links section centered with equal button sizes */
-.links {
+  .links {
     margin: 2rem auto;
     width: 100%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
+  }
 
-.link-row {
-    display: grid;
-    grid-template-columns: 1fr 150px; /* label flexible, button fixed */
+  .link-row {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px; /* consistent gap for all devices */
-    width: 100%; /* row spans full container width */
-}
+  }
 
-.link-label {
+  .link-label {
     font-weight: bold;
-    text-align: right;
-}
+    text-align: left;
+    flex: 1;
+  }
 
-.btn {
+  .btn {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 3px;
@@ -64,9 +63,9 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
-    width: 100%; /* fills the 150px column */
+    width: 150px; /* Forces all buttons same width */
     text-align: center;
-}
+  }
 
   /* Button colors */
   .btn-resume { background: #4b0082; }
