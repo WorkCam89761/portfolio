@@ -32,22 +32,19 @@
   }
 
   /* Links section centered with equal button sizes */
-  .links {
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .link-row {
     display: grid;
-    grid-template-columns: 1fr 150px; /* label takes remaining space, button fixed width */
+    grid-template-columns: 1fr 150px;
     align-items: center;
-    gap: 10px;
+    gap: 8px; /* default gap for desktop */
 }
 
+/* On smaller screens, reduce the gap */
+@media (max-width: 600px) {
+    .link-row {
+        gap: 4px; /* tighter gap for mobile */
+    }
+}
 .link-label {
     font-weight: bold;
     text-align: right; /* right align the text */
