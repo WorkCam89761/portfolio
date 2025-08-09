@@ -24,33 +24,32 @@
   p {
     margin: 0.3rem 0;
   }
- /* Center the entire links section */
+  
+  /* Fixed and improved links section */
   .links {
-    margin: 2rem auto 0 auto; /* Top | Horizontal | Bottom */
-    width: fit-content; /* Shrink to fit content */
-    max-width: 100%;
+    margin: 2rem auto 0 auto;
+    width: 100%;
+    max-width: 500px; /* Adjusted for better proportions */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align text to left within centered container */
+    align-items: center; /* Changed from flex-start to center */
   }
 
-  /* Link row styling */
   .link-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    width: 100%; /* Full width of container */
     margin: 8px 0;
-    gap: 30px; /* Space between text and button */
+    align-items: center;
   }
 
-  /* Text labels */
-  .link-row strong {
+  .link-label {
     font-weight: bold;
-    min-width: 150px; /* Consistent width for all labels */
+    min-width: 150px;
+    text-align: left;
+    margin-right: 30px;
   }
 
-  /* Buttons (keep your existing styles) */
   .btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -61,14 +60,16 @@
     text-transform: uppercase;
     font-size: 0.85rem;
     white-space: nowrap;
+  }
   
-  /* Your existing button colors */
+  /* Button colors */
   .btn-resume { background: #4b0082; }
   .btn-certification { background: #009B77; }
   .btn-email { background: #dcb84f; }
   .btn-projects { background: #333; }
   .btn-linkedin { background: #0072b1; }
   .btn-youtube { background: #ff0000; }
+  
   .education-section {
     font-size: 1.25rem;
     line-height: 1.25;
@@ -100,47 +101,43 @@
   <strong>Associate of Applied Science, Computer Systems & Information Technology<br>
   River Parishes Community College – Class of 2025</strong></p>
 
-<!-- New Grad Section -->
+<!-- Sections -->
 <div class="section">
-  <p> </p>
   <p>New Grad Seeking Software & IT Opportunities</p>
 </div>
 
-<!-- Interests Section -->
 <div class="section">
-  <p> </p>
   <p>Interested in software development, systems administration, and building efficient, user-friendly technology solutions.</p>
 </div>
 
-<!-- Skills Section -->
 <div class="section">
-  <p> </p>
   <p>I've dabbled in everything from homelabbing, crypto-currency mining, Linux, programming and scripting.</p>
 </div>
 
+<!-- Updated links section with proper alignment -->
 <div class="links">
   <div class="link-row">
-    <strong>My Resume</strong>
+    <span class="link-label">My Resume</span>
     <button class="btn btn-resume" onclick="window.open('Cameron Morin Resume.docx')">Resume 📜</button>
   </div>
   <div class="link-row">
-    <strong>My Certifications</strong>
+    <span class="link-label">My Certifications</span>
     <button class="btn btn-certification" onclick="window.open('Cameron Morin Resume.docx')">Certification 🎖</button>
   </div>
   <div class="link-row">
-    <strong>My Email</strong>
+    <span class="link-label">My Email</span>
     <button class="btn btn-email" onclick="window.location.href='mailto:workcam89761@gmail.com'">Email 📧</button>
   </div>
   <div class="link-row">
-    <strong>My Projects</strong>
+    <span class="link-label">My Projects</span>
     <button class="btn btn-projects" onclick="window.open('https://yourprojectsurl.com')">Projects 📁</button>
   </div>
   <div class="link-row">
-    <strong>My LinkedIn</strong>
+    <span class="link-label">My LinkedIn</span>
     <button class="btn btn-linkedin" onclick="window.open('https://www.linkedin.com/in/cameron-morin-350731344/')">LinkedIn 🌐</button>
   </div>
   <div class="link-row">
-    <strong>My YouTube</strong>
+    <span class="link-label">My YouTube</span>
     <button class="btn btn-youtube" onclick="window.open('https://www.youtube.com/@TheMiningMersie')">YouTube 🎥</button>
   </div>
 </div>
