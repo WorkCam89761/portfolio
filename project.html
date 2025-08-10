@@ -193,20 +193,79 @@
                 margin: 1rem 0;
             }
         }
+        /* Catalog Styling */
+.catalog-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.catalog-list > li {
+    margin-bottom: 1rem;
+}
+
+.category {
+    display: block;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0.5rem;
+}
+
+.sub-list {
+    list-style: none;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent-color);
+}
+
+.sub-list li {
+    margin-bottom: 0.3rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.sub-list li::before {
+    content: "•";
+    color: var(--link-color);
+    position: absolute;
+    left: 0;
+}
+
+.sub-list a {
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 0.95em;
+}
+
+.sub-list a:hover {
+    opacity: 1;
+    color: var(--link-color);
+}
     </style>
 </head>
 <body>
     <div class="wiki-container">
         <!-- Sidebar Navigation -->
-        <nav class="wiki-sidebar">
-            <h3>Project Catalog</h3>
-            <ul>
-                <li><a href="#minecraft-server">Minecraft Server Cluster</a></li>
-                <li><a href="#crypto-miner">Crypto Mining Dashboard</a></li>
-                <li><a href="#linux-tool">Linux Admin Toolkit</a></li>
+      <nav class="wiki-sidebar">
+    <h3>Project Catalog</h3>
+    <ul class="catalog-list">
+        <li>
+            <span class="category">Homelab</span>
+            <ul class="sub-list">
+                <li><a href="#vpn">VPN Server</a></li>
+                <li><a href="#minecraft">Minecraft Cluster</a></li>
+                <li><a href="#nas">NAS Setup</a></li>
             </ul>
-        </nav>
-        
+        </li>
+        <li>
+            <span class="category">Crypto</span>
+            <ul class="sub-list">
+                <li><a href="#miner">Mining Dashboard</a></li>
+                <li><a href="#wallet">Wallet Tracker</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
         <!-- Main Content -->
         <main class="wiki-content">
             <!-- Project 1 -->
