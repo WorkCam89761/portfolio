@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Wiki Home</title>
-    <link href="css/style.css" rel="stylesheet">
+    <!-- Fixed CSS path (assuming file structure) -->
+    <link href="./css/style.css" rel="stylesheet"> <!-- Changed from "css/style.css" -->
 </head>
 <body>
     <div class="wiki-container">
         <!-- Sidebar Navigation -->
         <nav class="wiki-sidebar">
-            <h1>Project Wiki</h1>
+            <h1 class="wiki-title">Project Wiki</h1> <!-- Added class -->
             <a href="../" class="back-button">← Back to Portfolio</a>
             
-            <h3>Categories</h3>
+            <h3 class="sidebar-heading">Categories</h3> <!-- Added class -->
             <ul class="category-list">
-                <li><a href="homelab/">Homelab Projects</a></li>
-                <li><a href="cryptomining/">Cryptomining</a></li>
+                <li><a href="homelab/" class="category-link">Homelab Projects</a></li> <!-- Added class -->
+                <li><a href="cryptomining/" class="category-link">Cryptomining</a></li> <!-- Added class -->
             </ul>
         </nav>
 
         <!-- Main Content -->
         <main class="wiki-content">
             <div class="welcome-banner">
-                <h2>Welcome to My Project Wiki</h2>
-                <p>Detailed documentation of my technical projects and experiments.</p>
+                <h2 class="banner-title">Welcome to My Project Wiki</h2> <!-- Added class -->
+                <p class="banner-text">Detailed documentation of my technical projects and experiments.</p> <!-- Added class -->
             </div>
 
             <div class="category-grid">
                 <!-- Homelab Card -->
                 <div class="category-card" onclick="location.href='homelab/'">
-                    <h3>Homelab</h3>
-                    <p>Self-hosted infrastructure and networking projects</p>
-                    <ul>
+                    <h3 class="card-title">Homelab</h3> <!-- Added class -->
+                    <p class="card-description">Self-hosted infrastructure and networking projects</p> <!-- Added class -->
+                    <ul class="card-features"> <!-- Added class -->
                         <li>VPN Server</li>
                         <li>Minecraft Cluster</li>
                         <li>NAS Setup</li>
@@ -41,9 +42,9 @@
 
                 <!-- Cryptomining Card -->
                 <div class="category-card" onclick="location.href='cryptomining/'">
-                    <h3>Cryptomining</h3>
-                    <p>Blockchain and mining-related projects</p>
-                    <ul>
+                    <h3 class="card-title">Cryptomining</h3>
+                    <p class="card-description">Blockchain and mining-related projects</p>
+                    <ul class="card-features">
                         <li>Mining Dashboard</li>
                         <li>Wallet Tracker</li>
                         <li>Profit Calculator</li>
