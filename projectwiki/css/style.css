@@ -70,6 +70,47 @@
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+/* Homepage Specific Styles */
+.welcome-banner {
+    background: var(--accent-color);
+    padding: 2rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    background: var(--sidebar-bg);
+    padding: 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-left: 4px solid var(--accent-color);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.category-card h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.category-card ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    color: #bbb;
+}
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
