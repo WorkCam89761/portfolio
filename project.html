@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects Wiki</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: #f6f6f6;
+            color: #202122;
+            line-height: 1.6;
+        }
+        
+        /* Wiki Layout */
+        .wiki-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        /* Sidebar */
+        .wiki-sidebar {
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            background: white;
+            border-right: 1px solid #a7d7f9;
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .wiki-sidebar h3 {
+            color: #54595d;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #a7d7f9;
+            margin-bottom: 1rem;
+        }
+        
+        .wiki-sidebar ul {
+            list-style: none;
+        }
+        
+        .wiki-sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .wiki-sidebar a {
+            color: #0645ad;
+            text-decoration: none;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .wiki-sidebar a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Content Area */
+        .wiki-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .wiki-article {
+            margin-bottom: 3rem;
+        }
+        
+        .wiki-article h2 {
+            color: #000;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .wiki-article img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border: 1px solid #eaecf0;
+        }
+        
+        /* Infobox (Wikipedia-style panel) */
+        .infobox {
+            float: right;
+            width: 300px;
+            margin: 0 0 1rem 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            font-size: 0.95rem;
+        }
+        
+        .infobox h3 {
+            background: #eaecf0;
+            margin: -1rem -1rem 1rem -1rem;
+            padding: 0.5rem 1rem;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .infobox table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .infobox th, .infobox td {
+            padding: 0.3rem 0;
+            vertical-align: top;
+        }
+        
+        .infobox th {
+            text-align: left;
+            width: 40%;
+        }
+        
+        /* Code blocks */
+        pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid #eaecf0;
+        }
+        
+        code {
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .wiki-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .wiki-sidebar {
+                position: static;
+                border-right: none;
+                margin-bottom: 2rem;
+            }
+            
+            .infobox {
+                float: none;
+                width: 100%;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-container">
+        <!-- Sidebar Navigation -->
+        <nav class="wiki-sidebar">
+            <h3>Project Catalog</h3>
+            <ul>
+                <li><a href="#minecraft-server">Minecraft Server Cluster</a></li>
+                <li><a href="#crypto-miner">Crypto Mining Dashboard</a></li>
+                <li><a href="#linux-tool">Linux Admin Toolkit</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <!-- Project 1 -->
+            <article id="minecraft-server" class="wiki-article">
+                <h2>Minecraft Server Cluster</h2>
+                
+                <aside class="infobox">
+                    <h3>Project Facts</h3>
+                    <table>
+                        <tr><th>Date</th><td>January 2023</td></tr>
+                        <tr><th>Technologies</th><td>Kubernetes, Python, Bash</td></tr>
+                        <tr><th>Code</th><td><a href="#">GitHub</a></td></tr>
+                        <tr><th>Status</th><td>Active</td></tr>
+                    </table>
+                </aside>
+                
+                <p>This project created a scalable Minecraft server network using microservices, automatically adjusting resources based on player count.</p>
+                
+                <img src="https://via.placeholder.com/800x400?text=Minecraft+Server+Dashboard" alt="Server dashboard">
+                
+                <h3>Technical Details</h3>
+                <p>The system uses Kubernetes to orchestrate server pods, with a custom Python load balancer that:</p>
+                <ul>
+                    <li>Monitors player counts across instances</li>
+                    <li>Automatically scales up/down</li>
+                    <li>Maintains persistent world storage</li>
+                </ul>
+                
+                <pre><code># Example deployment config
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: minecraft
+  template:
+    spec:
+      containers:
+      - name: mc-container
+        image: itzg/minecraft-server</code></pre>
+            </article>
+            
+            <!-- Project 2 -->
+            <article id="crypto-miner" class="wiki-article">
+                <h2>Crypto Mining Dashboard</h2>
+                
+                <aside class="infobox">
+                    <h3>Project Facts</h3>
+                    <table>
+                        <tr><th>Date</th><td>March 2023</td></tr>
+                        <tr><th>Technologies</th><td>React, Node.js, WebSockets</td></tr>
+                        <tr><th>Demo</th><td><a href="#">Live Preview</a></td></tr>
+                    </table>
+                </aside>
+                
+                <p>Real-time monitoring system for my cryptocurrency mining rigs, displaying hashrate, temperature, and profitability metrics.</p>
+                
+                <img src="https://via.placeholder.com/800x400?text=Mining+Dashboard" alt="Mining dashboard">
+                
+                <h3>Features</h3>
+                <ul>
+                    <li>Live GPU temperature monitoring</li>
+                    <li>Profitability calculator</li>
+                    <li>Historical performance charts</li>
+                    <li>Mobile-responsive interface</li>
+                </ul>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.wiki-sidebar a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update URL without page jump
+                history.pushState(null, null, targetId);
+            });
+        });
+        
+        // Highlight current section in sidebar
+        window.addEventListener('scroll', () => {
+            const articles = document.querySelectorAll('.wiki-article');
+            let currentArticle = '';
+            
+            articles.forEach(article => {
+                const rect = article.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    currentArticle = '#' + article.id;
+                }
+            });
+            
+            document.querySelectorAll('.wiki-sidebar a').forEach(link => {
+                link.style.fontWeight = link.getAttribute('href') === currentArticle ? 'bold' : 'normal';
+            });
+        });
+    </script>
+</body>
+</html>
