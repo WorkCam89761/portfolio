@@ -1,6 +1,6 @@
 /* ===== CSS Reset & Variables ===== */
 :root {
-  --bg-color: #dcdcdc;      /* Light gray background */
+  --bg-color: #a1a1a1;      /* Light gray background */
   --sidebar-bg: #333;       /* Dark sidebar */
   --content-bg: #2d2d2d;    /* Dark content area */
   --text-color: #e0e0e0;    /* Light text */
