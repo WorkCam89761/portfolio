@@ -3,401 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cameron Morin - Projects</title>
-    <style>
-        /* Dark Theme with #dcdcdc background */
-        :root {
-            --bg-color: #a1a1a1;
-            --content-bg: #2d2d2d;
-            --text-color: #e0e0e0;
-            --accent-color: #4b0082;
-            --border-color: #444;
-            --sidebar-bg: #333;
-            --link-color: #7aa2f7;
-            --code-bg: #1e1e1e;
-            --infobox-bg: #383838;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-        
-        body {
-            background: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        /* Wiki Layout */
-        .wiki-container {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        /* Sidebar */
-        .wiki-sidebar {
-            position: sticky;
-            top: 20px;
-            height: fit-content;
-            background: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
-            padding: 1rem;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-        
-        .wiki-sidebar h3 {
-            color: var(--text-color);
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--accent-color);
-            margin-bottom: 1rem;
-        }
-        
-        .wiki-sidebar ul {
-            list-style: none;
-        }
-        
-        .wiki-sidebar li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .wiki-sidebar a {
-            color: var(--link-color);
-            text-decoration: none;
-            display: block;
-            padding: 0.3rem 0;
-            transition: color 0.2s;
-        }
-        
-        .wiki-sidebar a:hover {
-            color: #bbd1ff;
-            text-decoration: underline;
-        }
-        
-        /* Content Area */
-        .wiki-content {
-            background: var(--content-bg);
-            padding: 2rem;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-        
-        .wiki-article {
-            margin-bottom: 3rem;
-        }
-        
-        .wiki-article h2 {
-            color: #fff;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .wiki-article img {
-            max-width: 100%;
-            height: auto;
-            margin: 1rem 0;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        /* Infobox */
-        .infobox {
-            float: right;
-            width: 300px;
-            margin: 0 0 1rem 1rem;
-            padding: 1rem;
-            background: var(--infobox-bg);
-            border: 1px solid var(--border-color);
-            font-size: 0.95rem;
-        }
-        
-        .infobox h3 {
-            background: var(--accent-color);
-            margin: -1rem -1rem 1rem -1rem;
-            padding: 0.5rem 1rem;
-            font-size: 1.1rem;
-            text-align: center;
-            color: white;
-        }
-        
-        .infobox table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .infobox th, .infobox td {
-            padding: 0.3rem 0;
-            vertical-align: top;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .infobox th {
-            text-align: left;
-            width: 40%;
-            color: #bbb;
-        }
-        
-        .infobox a {
-            color: var(--link-color);
-        }
-        
-        /* Code blocks */
-        pre {
-            background: var(--code-bg);
-            padding: 1rem;
-            border-radius: 4px;
-            overflow-x: auto;
-            margin: 1rem 0;
-            border: 1px solid var(--border-color);
-        }
-        
-        code {
-            font-family: 'Consolas', monospace;
-            font-size: 0.9rem;
-            color: #d4d4d4;
-        }
-        
-        /* Lists */
-        ul, ol {
-            padding-left: 1.5rem;
-            margin: 1rem 0;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .wiki-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .wiki-sidebar {
-                position: static;
-                border-right: none;
-                margin-bottom: 2rem;
-            }
-            
-            .infobox {
-                float: none;
-                width: 100%;
-                margin: 1rem 0;
-            }
-        }
-        /* Catalog Styling */
-.catalog-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.catalog-list > li {
-    margin-bottom: 1rem;
-}
-
-.category {
-    display: block;
-    font-weight: bold;
-    color: var(--text-color);
-    padding: 0.3rem 0;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 0.5rem;
-}
-
-.sub-list {
-    list-style: none;
-    padding-left: 1rem;
-    border-left: 2px solid var(--accent-color);
-}
-
-.sub-list li {
-    margin-bottom: 0.3rem;
-    position: relative;
-    padding-left: 1rem;
-}
-
-.sub-list li::before {
-    content: "•";
-    color: var(--link-color);
-    position: absolute;
-    left: 0;
-}
-
-.sub-list a {
-    color: var(--text-color);
-    opacity: 0.9;
-    font-size: 0.95em;
-}
-
-.sub-list a:hover {
-    opacity: 1;
-    color: var(--link-color);
-}
-    </style>
+    <title>Homelab Projects Wiki</title>
+    <!-- Link to shared CSS (adjust path as needed) -->
+    <link href="../../css/style.css" rel="stylesheet">
 </head>
 <body>
+    <!-- ##### START: PASTE STEP 2 CODE HERE ##### -->
     <div class="wiki-container">
-    <nav class="wiki-sidebar">
-        <a href="../../" class="back-button">← Back to Portfolio</a>
-        
-        <h3>Wiki Categories</h3>
-        <ul>
-            <li><a href="../homelab/">Homelab</a></li>
-            <li><a href="../cryptomining/">Cryptomining</a></li>
-        </ul>
-        
-        <h3>Homelab Projects</h3>
-        <ul>
-            <li><a href="vpn.html">VPN Server</a></li>
-            <li><a href="minecraft.html">Minecraft Cluster</a></li>
-        </ul>
-    </nav>
-    
-    <main class="wiki-content">
-        <h1>Homelab Projects</h1>
-        <!-- Your content here -->
-    </main>
-</div>
-    <div class="wiki-container">
-        <!-- Sidebar Navigation -->
-      <nav class="wiki-sidebar">
-    <h3>Project Catalog</h3>
-    <ul class="catalog-list">
-        <li>
-            <span class="category">Homelab</span>
-            <ul class="sub-list">
-                <li><a href="#vpn">VPN Server</a></li>
-                <li><a href="#minecraft">Minecraft Cluster</a></li>
-                <li><a href="#nas">NAS Setup</a></li>
-            </ul>
-        </li>
-        <li>
-            <span class="category">Crypto</span>
-            <ul class="sub-list">
-                <li><a href="#miner">Mining Dashboard</a></li>
-                <li><a href="#wallet">Wallet Tracker</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
-        <!-- Main Content -->
-        <main class="wiki-content">
-            <!-- Project 1 -->
-            <article id="minecraft-server" class="wiki-article">
-                <h2>Minecraft Server Cluster</h2>
-                
-                <aside class="infobox">
-                    <h3>Project Facts</h3>
-                    <table>
-                        <tr><th>Date</th><td>January 2023</td></tr>
-                        <tr><th>Technologies</th><td>Kubernetes, Python, Bash</td></tr>
-                        <tr><th>Code</th><td><a href="#">GitHub</a></td></tr>
-                        <tr><th>Status</th><td>Active</td></tr>
-                    </table>
-                </aside>
-                
-                <p>This project created a scalable Minecraft server network using microservices, automatically adjusting resources based on player count.</p>
-                
-                <img src="https://via.placeholder.com/800x400/333333/cccccc?text=Minecraft+Server+Dashboard" alt="Server dashboard">
-                
-                <h3>Technical Details</h3>
-                <p>The system uses Kubernetes to orchestrate server pods, with a custom Python load balancer that:</p>
-                <ul>
-                    <li>Monitors player counts across instances</li>
-                    <li>Automatically scales up/down</li>
-                    <li>Maintains persistent world storage</li>
-                </ul>
-                
-                <pre><code># Example deployment config
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: mc-server
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: minecraft
-  template:
-    spec:
-      containers:
-      - name: mc-container
-        image: itzg/minecraft-server</code></pre>
-            </article>
+        <!-- Left Sidebar Navigation -->
+        <nav class="wiki-sidebar">
+            <!-- Back button to main portfolio -->
+            <a href="../../" class="back-button">← Back to Portfolio</a>
             
-            <!-- Project 2 -->
-            <article id="crypto-miner" class="wiki-article">
-                <h2>Crypto Mining Dashboard</h2>
-                
-                <aside class="infobox">
-                    <h3>Project Facts</h3>
-                    <table>
-                        <tr><th>Date</th><td>March 2023</td></tr>
-                        <tr><th>Technologies</th><td>React, Node.js, WebSockets</td></tr>
-                        <tr><th>Demo</th><td><a href="#">Live Preview</a></td></tr>
-                    </table>
-                </aside>
-                
-                <p>Real-time monitoring system for my cryptocurrency mining rigs, displaying hashrate, temperature, and profitability metrics.</p>
-                
-                <img src="https://via.placeholder.com/800x400/333333/cccccc?text=Mining+Dashboard" alt="Mining dashboard">
-                
-                <h3>Features</h3>
-                <ul>
-                    <li>Live GPU temperature monitoring</li>
-                    <li>Profitability calculator</li>
-                    <li>Historical performance charts</li>
-                    <li>Mobile-responsive interface</li>
-                </ul>
-            </article>
+            <!-- Wiki Categories -->
+            <h3>Wiki Categories</h3>
+            <ul>
+                <li><a href="../homelab/">Homelab</a></li>
+                <li><a href="../cryptomining/">Cryptomining</a></li>
+            </ul>
+            
+            <!-- Current Category Projects -->
+            <h3>Homelab Projects</h3>
+            <ul>
+                <li><a href="vpn.html">VPN Server</a></li>
+                <li><a href="minecraft.html">Minecraft Cluster</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="wiki-content">
+            <h1>Homelab Projects</h1>
+            
+            <!-- Project Preview Cards -->
+            <div class="project-card" onclick="location.href='vpn.html'">
+                <h2>VPN Server</h2>
+                <p>Self-hosted WireGuard VPN with automated client configs</p>
+            </div>
+            
+            <div class="project-card" onclick="location.href='minecraft.html'">
+                <h2>Minecraft Cluster</h2>
+                <p>Kubernetes-managed server network with auto-scaling</p>
+            </div>
         </main>
     </div>
-
-    <script>
-        // Smooth scrolling for sidebar links
-        document.querySelectorAll('.wiki-sidebar a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Update URL without page jump
-                history.pushState(null, null, targetId);
-            });
-        });
-        
-        // Highlight current section in sidebar
-        window.addEventListener('scroll', () => {
-            const articles = document.querySelectorAll('.wiki-article');
-            let currentArticle = '';
-            
-            articles.forEach(article => {
-                const rect = article.getBoundingClientRect();
-                if (rect.top <= 100) {
-                    currentArticle = '#' + article.id;
-                }
-            });
-            
-            document.querySelectorAll('.wiki-sidebar a').forEach(link => {
-                if (link.getAttribute('href') === currentArticle) {
-                    link.style.fontWeight = 'bold';
-                    link.style.color = '#bbd1ff';
-                } else {
-                    link.style.fontWeight = 'normal';
-                    link.style.color = 'var(--link-color)';
-                }
-            });
-        });
-    </script>
+    <!-- ##### END: STEP 2 CODE ##### -->
 </body>
 </html>
