@@ -3,48 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homelab Projects Wiki</title>
-    <!-- Link to shared CSS (adjust path as needed) -->
-    <link href="../css/style.css" rel="stylesheet">
+    <title>Project Wiki Home</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="wiki-container">
-        <!-- Left Sidebar Navigation -->
+        <!-- Sidebar Navigation -->
         <nav class="wiki-sidebar">
-            <!-- Back button to main portfolio -->
-            <a href="../../" class="back-button">← Back to Portfolio</a>
+            <h1>Project Wiki</h1>
+            <a href="../" class="back-button">← Back to Portfolio</a>
             
-            <!-- Wiki Categories -->
-            <h3>Wiki Categories</h3>
-            <ul>
-                <li><a href="../homelab/">Homelab</a></li>
-                <li><a href="../cryptomining/">Cryptomining</a></li>
-            </ul>
-            
-            <!-- Current Category Projects -->
-            <h3>Homelab Projects</h3>
-            <ul>
-                <li><a href="vpn.html">VPN Server</a></li>
-                <li><a href="minecraft.html">Minecraft Cluster</a></li>
+            <h3>Categories</h3>
+            <ul class="category-list">
+                <li><a href="homelab/">Homelab Projects</a></li>
+                <li><a href="cryptomining/">Cryptomining</a></li>
             </ul>
         </nav>
 
-        <!-- Main Content Area -->
+        <!-- Main Content -->
         <main class="wiki-content">
-            <h1>Homelab Projects</h1>
-            
-            <!-- Project Preview Cards -->
-            <div class="project-card" onclick="location.href='vpn.html'">
-                <h2>VPN Server</h2>
-                <p>Self-hosted WireGuard VPN with automated client configs</p>
+            <div class="welcome-banner">
+                <h2>Welcome to My Project Wiki</h2>
+                <p>Detailed documentation of my technical projects and experiments.</p>
             </div>
-            
-            <div class="project-card" onclick="location.href='minecraft.html'">
-                <h2>Minecraft Cluster</h2>
-                <p>Kubernetes-managed server network with auto-scaling</p>
+
+            <div class="category-grid">
+                <!-- Homelab Card -->
+                <div class="category-card" onclick="location.href='homelab/'">
+                    <h3>Homelab</h3>
+                    <p>Self-hosted infrastructure and networking projects</p>
+                    <ul>
+                        <li>VPN Server</li>
+                        <li>Minecraft Cluster</li>
+                        <li>NAS Setup</li>
+                    </ul>
+                </div>
+
+                <!-- Cryptomining Card -->
+                <div class="category-card" onclick="location.href='cryptomining/'">
+                    <h3>Cryptomining</h3>
+                    <p>Blockchain and mining-related projects</p>
+                    <ul>
+                        <li>Mining Dashboard</li>
+                        <li>Wallet Tracker</li>
+                        <li>Profit Calculator</li>
+                    </ul>
+                </div>
             </div>
         </main>
     </div>
-    <!-- ##### END: STEP 2 CODE ##### -->
 </body>
 </html>
