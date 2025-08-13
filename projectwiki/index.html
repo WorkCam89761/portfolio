@@ -3,129 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Wiki - Cameron Morin</title>
+    <title>Technical Wiki | Cameron Morin</title>
     <link href="./css/style.css" rel="stylesheet">
     <style>
-        /* Content styling with corrected typography */
-        .content-section {
-            margin-bottom: 3rem;
-            line-height: 1.6;
+        .supergrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        
-        .content-section h2 {
+        .megacard {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .megacard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
             color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin: 2rem 0 1.5rem;
-            font-size: 1.5rem;
         }
-        
-        .content-section h3 {
-            margin: 1.8rem 0 1rem;
-            color: #fff;
-            font-size: 1.2rem;
-        }
-        
-        .content-section p {
-            margin-bottom: 1.2rem;
-        }
-        
-        .content-section ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .content-section li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Rest of your existing styles... */
     </style>
 </head>
 <body>
     <div class="wiki-container">
         <nav class="wiki-sidebar">
-            <!-- Your existing sidebar code -->
+            <h1 class="wiki-title">Tech Wiki</h1>
+            <a href="../" class="back-button">← Portfolio</a>
+            
+            <h3 class="sidebar-heading">Core Sections</h3>
+            <ul class="category-list">
+                <li><a href="homelab/" class="category-link">Homelab</a></li>
+                <li><a href="cryptomining/" class="category-link">Cryptomining</a></li>
+                <li><a href="networking/" class="category-link">Networking</a></li>
+                <li><a href="pc-builds/" class="category-link">PC Builds</a></li>
+                <li><a href="programs-scripts/" class="category-link">Programs/Scripts</a></li>
+            </ul>
         </nav>
 
         <main class="wiki-content">
             <div class="welcome-banner">
-                <h2 class="banner-title">Cameron's Technical Projects</h2>
-                <p class="banner-text">Documentation of my homelab, cryptocurrency mining, and other technical experiments.</p>
+                <h2 class="banner-title">Cameron's Technical Wiki</h2>
+                <p class="banner-text">Comprehensive documentation of my projects across multiple disciplines</p>
             </div>
 
-            <!-- Homelab Section -->
-            <div class="content-section">
-                <h2>Homelab Projects</h2>
-                
-                <h3>TrueNAS Scale</h3>
-                <img src="./media/truenasdashboard.jpg" alt="TrueNAS Dashboard" class="content-image">
-                <p>TrueNAS Scale is the operating system I use to host all my services and containers. To ensure stability:</p>
-                <ul>
-                    <li>Configured a static IP (192.168.1.69) for the host machine to prevent DHCP conflicts</li>
-                    <li>Set up multiple DNS servers (8.8.8.8, 9.9.9.9, 1.1.1.1) for reliable domain resolution</li>
-                    <li>Assigned my router (192.168.1.1) as the gateway IP</li>
-                    <li>Implemented a shell script to lock these settings and prevent accidental changes</li>
-                </ul>
-
-                <h3>Emby Media Server</h3>
-                <img src="./media/embydashboard.jpg" alt="Emby Dashboard" class="content-image">
-                <p>Emby is a self-hosted media server that allows streaming of movies, TV shows, and personal videos. Unlike subscription services like Netflix, this gives me complete control over my media library while maintaining privacy.</p>
-
-                <h3>Immich Photo Backup</h3>
-                <img src="./media/immichdashboard.jpg" alt="Immich Dashboard" class="content-image">
-                <p>Immich serves as a private alternative to Google Photos, automatically backing up photos and videos from my phone. By self-hosting, I keep my personal memories secure rather than storing them on third-party servers.</p>
-            </div>
-
-            <!-- Cryptomining Section -->
-            <div class="content-section">
-                <h2>Cryptocurrency Mining</h2>
-                
-                <h3>MMPOS Mining OS</h3>
-                <img src="./media/MMPOSdashboard.jpg" alt="MMPOS Dashboard" class="content-image">
-                <p>MMPOS is a Linux distribution specifically designed for cryptocurrency mining. Key features include:</p>
-                <ul>
-                    <li>Web-based rig monitoring and management</li>
-                    <li>Telegram notifications for hardware issues</li>
-                    <li>More cost-effective than my previous HiveOS setup</li>
-                </ul>
-
-                <h3>GPU Mining Rig</h3>
-                <img src="./media/GPURig.jpg" alt="GPU Mining Rig" class="content-image">
-                <p>My current setup features:</p>
-                <ul>
-                    <li>Custom Octominer case (modified server chassis)</li>
-                    <li>12 AMD BC160 GPUs with HBM2 memory</li>
-                    <li>Primarily mines Ironfish, with flexibility to switch to Ravencoin</li>
-                    <li>Optimized for memory-based algorithms</li>
-                </ul>
-            </div>
-
-            <!-- PC Builds Section -->
-            <div class="content-section">
-                <h2>PC Builds</h2>
-                
-                <h3>Sleeper TrueNAS Server</h3>
-                <div class="media-grid">
-                    <div class="media-item">
-                        <img src="./media/InsideServerPic.jpg" alt="Server Internals">
-                        <div class="media-caption">Internal Components</div>
-                    </div>
-                    <div class="media-item">
-                        <img src="./media/OutsideServerPic.jpg" alt="Server Exterior">
-                        <div class="media-caption">External View</div>
-                    </div>
+            <div class="supergrid">
+                <!-- Homelab Card -->
+                <div class="megacard" onclick="location.href='homelab/'">
+                    <div class="category-icon">🖥️</div>
+                    <h3>Homelab</h3>
+                    <p>TrueNAS, media servers, and self-hosted infrastructure</p>
+                    <ul class="card-features">
+                        <li>Emby & Immich</li>
+                        <li>Nextcloud</li>
+                        <li>SMB Shares</li>
+                    </ul>
                 </div>
-                <p>Specifications:</p>
-                <ul>
-                    <li>Intel Core i7-1280P processor</li>
-                    <li>32GB RAM</li>
-                    <li>5×6TB HDDs in ZFS RAIDZ2 configuration</li>
-                    <li>Dual 1TB SSDs for cache acceleration</li>
-                    <li>2.5GbE USB-C network adapter</li>
-                    <li>EVGA 850W Gold PSU</li>
-                    <li>Intel Arc A380 GPU</li>
-                </ul>
+
+                <!-- Cryptomining Card -->
+                <div class="megacard" onclick="location.href='cryptomining/'">
+                    <div class="category-icon">⛏️</div>
+                    <h3>Cryptomining</h3>
+                    <p>GPU/CPU mining rigs and management systems</p>
+                    <ul class="card-features">
+                        <li>MMPOS</li>
+                        <li>AMD BC160 Rigs</li>
+                        <li>Profitability Tracking</li>
+                    </ul>
+                </div>
+
+                <!-- Networking Card -->
+                <div class="megacard" onclick="location.href='networking/'">
+                    <div class="category-icon">🌐</div>
+                    <h3>Networking</h3>
+                    <p>Advanced network configurations and security</p>
+                    <ul class="card-features">
+                        <li>Cloudflare DNS</li>
+                        <li>WireGuard VPN</li>
+                        <li>DD-WRT Firewalls</li>
+                    </ul>
+                </div>
+
+                <!-- PC Builds Card -->
+                <div class="megacard" onclick="location.href='pc-builds/'">
+                    <div class="category-icon">🛠️</div>
+                    <h3>PC Builds</h3>
+                    <p>Custom computers and server builds</p>
+                    <ul class="card-features">
+                        <li>Sleeper TrueNAS</li>
+                        <li>Xeon Workstation</li>
+                        <li>First Build (2016)</li>
+                    </ul>
+                </div>
+
+                <!-- Programs/Scripts Card -->
+                <div class="megacard" onclick="location.href='programs-scripts/'">
+                    <div class="category-icon">💻</div>
+                    <h3>Programs/Scripts</h3>
+                    <p>Custom automation and utilities</p>
+                    <ul class="card-features">
+                        <li>DDNS Updater</li>
+                        <li>Gateway IP Locker</li>
+                        <li>Minecraft SCADA</li>
+                    </ul>
+                </div>
             </div>
         </main>
     </div>
