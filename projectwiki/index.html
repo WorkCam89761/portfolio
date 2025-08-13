@@ -14,12 +14,19 @@
         }
         .megacard {
             background: var(--card-bg);
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid;
             padding: 1.5rem;
             border-radius: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
+        /* Unique border colors for each category */
+        .homelab-card { border-color: #4b0082; }
+        .mining-card { border-color: #d4af37; }
+        .network-card { border-color: #0072b1; }
+        .builds-card { border-color: #e74c3c; }
+        .scripts-card { border-color: #2ecc71; }
+        
         .megacard:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -27,8 +34,13 @@
         .category-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: var(--accent-color);
         }
+        /* Icon colors matching borders */
+        .homelab-icon { color: #4b0082; }
+        .mining-icon { color: #d4af37; }
+        .network-icon { color: #0072b1; }
+        .builds-icon { color: #e74c3c; }
+        .scripts-icon { color: #2ecc71; }
     </style>
 </head>
 <body>
@@ -50,39 +62,51 @@
         <main class="wiki-content">
             <div class="welcome-banner">
                 <h2 class="banner-title">Cameron's Technical Wiki</h2>
-                <p class="banner-text">Comprehensive documentation of my projects across multiple disciplines</p>
+                <p class="banner-text">Documentation hub for all my projects</p>
+            </div>
+
+            <!-- Preview Images with Correct Paths -->
+            <div class="media-grid" style="margin-bottom: 2rem;">
+                <div class="media-item">
+                    <img src="./media/homelab/truenas-preview.jpg" alt="TrueNAS Server" 
+                         onerror="this.onerror=null;this.src='./media/placeholder.jpg'">
+                </div>
+                <div class="media-item">
+                    <img src="./media/cryptomining/rig-preview.jpg" alt="Mining Rig" 
+                         onerror="this.onerror=null;this.src='./media/placeholder.jpg'">
+                </div>
             </div>
 
             <div class="supergrid">
                 <!-- Homelab Card -->
-                <div class="megacard" onclick="location.href='homelab/'">
-                    <div class="category-icon">🖥️</div>
+                <div class="megacard homelab-card" onclick="location.href='homelab/'">
+                    <div class="category-icon homelab-icon">🖥️</div>
                     <h3>Homelab</h3>
-                    <p>TrueNAS, media servers, and self-hosted infrastructure</p>
+                    <p>Self-hosted services and infrastructure</p>
                     <ul class="card-features">
-                        <li>Emby & Immich</li>
+                        <li>TrueNAS Scale</li>
+                        <li>Media Servers</li>
                         <li>Nextcloud</li>
-                        <li>SMB Shares</li>
                     </ul>
                 </div>
 
                 <!-- Cryptomining Card -->
-                <div class="megacard" onclick="location.href='cryptomining/'">
-                    <div class="category-icon">⛏️</div>
+                <div class="megacard mining-card" onclick="location.href='cryptomining/'">
+                    <div class="category-icon mining-icon">⛏️</div>
                     <h3>Cryptomining</h3>
-                    <p>GPU/CPU mining rigs and management systems</p>
+                    <p>Blockchain and mining operations</p>
                     <ul class="card-features">
-                        <li>MMPOS</li>
-                        <li>AMD BC160 Rigs</li>
-                        <li>Profitability Tracking</li>
+                        <li>MMPOS System</li>
+                        <li>GPU/CPU Rigs</li>
+                        <li>Profit Tracking</li>
                     </ul>
                 </div>
 
                 <!-- Networking Card -->
-                <div class="megacard" onclick="location.href='networking/'">
-                    <div class="category-icon">🌐</div>
+                <div class="megacard network-card" onclick="location.href='networking/'">
+                    <div class="category-icon network-icon">🌐</div>
                     <h3>Networking</h3>
-                    <p>Advanced network configurations and security</p>
+                    <p>Advanced configurations</p>
                     <ul class="card-features">
                         <li>Cloudflare DNS</li>
                         <li>WireGuard VPN</li>
@@ -91,10 +115,10 @@
                 </div>
 
                 <!-- PC Builds Card -->
-                <div class="megacard" onclick="location.href='pc-builds/'">
-                    <div class="category-icon">🛠️</div>
+                <div class="megacard builds-card" onclick="location.href='pc-builds/'">
+                    <div class="category-icon builds-icon">🛠️</div>
                     <h3>PC Builds</h3>
-                    <p>Custom computers and server builds</p>
+                    <p>Custom hardware projects</p>
                     <ul class="card-features">
                         <li>Sleeper TrueNAS</li>
                         <li>Xeon Workstation</li>
@@ -103,14 +127,14 @@
                 </div>
 
                 <!-- Programs/Scripts Card -->
-                <div class="megacard" onclick="location.href='programs-scripts/'">
-                    <div class="category-icon">💻</div>
+                <div class="megacard scripts-card" onclick="location.href='programs-scripts/'">
+                    <div class="category-icon scripts-icon">💻</div>
                     <h3>Programs/Scripts</h3>
-                    <p>Custom automation and utilities</p>
+                    <p>Custom automation tools</p>
                     <ul class="card-features">
                         <li>DDNS Updater</li>
                         <li>Gateway IP Locker</li>
-                        <li>Minecraft SCADA</li>
+                        <li>Job Auto-Apply Bot</li>
                     </ul>
                 </div>
             </div>
