@@ -1,13 +1,17 @@
 /* ===== CSS Reset & Variables ===== */
 :root {
-  --bg-color: #a1a1a1;      /* Light gray background */
-  --sidebar-bg: #333;       /* Dark sidebar */
-  --content-bg: #2d2d2d;    /* Dark content area */
-  --text-color: #e0e0e0;    /* Light text */
-  --accent-color: #4b0082;  /* Purple accent */
-  --link-color: #7aa2f7;    /* Blue links */
-  --border-color: #444;     /* Dark borders */
-  --card-bg: #383838;       /* Card background */
+  --bg-color: #a1a1a1;
+  --sidebar-bg: #333;
+  --content-bg: #2d2d2d;
+  --text-color: #e0e0e0;
+  --accent-color: #4b0082;
+  --link-color: #7aa2f7;
+  --border-color: #444;
+  --card-bg: #383838;
+  /* New accent colors */
+  --homelab-accent: #4b0082;
+  --mining-accent: #d4af37;
+  --build-accent: #9b59b6;
 }
 
 * {
@@ -76,11 +80,12 @@ body {
   margin-bottom: 1.5rem;
   text-decoration: none;
   font-weight: bold;
-  transition: opacity 0.2s;
+  transition: all 0.2s ease;
 }
 
 .back-button:hover {
   opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 .category-list {
@@ -100,6 +105,7 @@ body {
 .category-link:hover {
   background: rgba(255,255,255,0.1);
   text-decoration: underline;
+  transform: translateX(3px);
 }
 
 /* ===== Welcome Banner ===== */
@@ -122,26 +128,49 @@ body {
   font-size: 1.1rem;
 }
 
-/* ===== Category Cards ===== */
-.category-grid {
+/* ===== Card System ===== */
+.supergrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  margin: 2rem 0;
 }
 
-.category-card {
+/* Base Card Styles */
+.megacard {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
-  cursor: pointer;
   transition: all 0.3s ease;
-  border-left: 4px solid var(--accent-color);
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
 }
 
-.category-card:hover {
+.megacard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
+/* Card Variants */
+.homelab-card {
+  border-left-color: var(--homelab-accent);
+}
+.mining-card {
+  border-left-color: var(--mining-accent);
+}
+.build-card {
+  border-left-color: var(--build-accent);
+}
+
+/* Card Contents */
+.category-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.homelab-icon { color: var(--homelab-accent); }
+.mining-icon { color: var(--mining-accent); }
+.build-icon { color: var(--build-accent); }
 
 .card-title {
   color: white;
@@ -175,11 +204,15 @@ body {
   
   .wiki-sidebar {
     position: static;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .welcome-banner {
     padding: 1.5rem;
+  }
+  
+  .megacard {
+    margin-bottom: 1.5rem;
   }
 }
 
