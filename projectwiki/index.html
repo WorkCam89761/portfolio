@@ -3,53 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Wiki Home</title>
-    <!-- Fixed CSS path (assuming file structure) -->
-    <link href="./css/style.css" rel="stylesheet"> <!-- Changed from "css/style.css" -->
+    <title>Project Wiki - Cameron Morin</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Additional wiki content styles */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section h3 {
+            margin: 1.5rem 0 1rem;
+            color: #fff;
+        }
+        
+        .content-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .media-item {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        
+        .media-caption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #bbb;
+            text-align: center;
+        }
+        
+        .youtube-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+        
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
     <div class="wiki-container">
         <!-- Sidebar Navigation -->
         <nav class="wiki-sidebar">
-            <h1 class="wiki-title">Project Wiki</h1> <!-- Added class -->
+            <h1 class="wiki-title">Project Wiki</h1>
             <a href="../" class="back-button">← Back to Portfolio</a>
             
-            <h3 class="sidebar-heading">Categories</h3> <!-- Added class -->
+            <h3 class="sidebar-heading">Categories</h3>
             <ul class="category-list">
-                <li><a href="homelab/" class="category-link">Homelab Projects</a></li> <!-- Added class -->
-                <li><a href="cryptomining/" class="category-link">Cryptomining</a></li> <!-- Added class -->
+                <li><a href="../projectwiki/homelab/" class="category-link">Homelab Projects</a></li>
+                <li><a href="../projectwiki/cryptomining/" class="category-link">Cryptomining</a></li>
+                <li><a href="#pc-builds" class="category-link">PC Builds</a></li>
+                <li><a href="#programs-scripts" class="category-link">Programs/Scripts</a></li>
             </ul>
         </nav>
 
         <!-- Main Content -->
         <main class="wiki-content">
             <div class="welcome-banner">
-                <h2 class="banner-title">Welcome to My Project Wiki</h2> <!-- Added class -->
-                <p class="banner-text">Detailed documentation of my technical projects and experiments.</p> <!-- Added class -->
+                <h2 class="banner-title">Cameron's Technical Projects</h2>
+                <p class="banner-text">Documentation of my homelab, cryptomining, and other technical experiments.</p>
             </div>
 
-            <div class="category-grid">
-                <!-- Homelab Card -->
-                <div class="category-card" onclick="location.href='homelab/'">
-                    <h3 class="card-title">Homelab</h3> <!-- Added class -->
-                    <p class="card-description">Self-hosted infrastructure and networking projects</p> <!-- Added class -->
-                    <ul class="card-features"> <!-- Added class -->
-                        <li>VPN Server</li>
-                        <li>Minecraft Cluster</li>
-                        <li>NAS Setup</li>
-                    </ul>
+            <div class="content-section">
+                <h2>Homelabbing</h2>
+                
+                <h3>Truenas Scale</h3>
+                <img src="../projectwiki/media/truenasdashboard.jpg" alt="Truenas Dashboard" class="content-image">
+                <p>Truenas scale is an OS I use to run all the services/containers I run. In order to have them work, I set up a static IP for the host machine (192.168.1.69) so that it doesn't change later on from DHCP causing issues. I also statically put multiple DNS ips (8.8.8.8, 9.9.9.9, 1.1.1.1) so it can resolve domain names, and set the gateway ip to my router (192.168.1.1). I did all of this in the shell or terminal with a script to make sure it stays the same just in case a VM tries to change something that it should not like the ip gateway.</p>
+                
+                <h3>Emby</h3>
+                <img src="../projectwiki/media/embydashboard.jpg" alt="Emby Dashboard" class="content-image">
+                <p>Emby is a media server that lets you stream movies, TV shows, and homemade videos. The idea of having a self-hosted media server is to have the power over your media and actually own it instead of using a subscription service like Netflix.</p>
+                
+                <!-- Continue with other homelab sections following same pattern -->
+                
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="../projectwiki/media/immichdashboard.jpg" alt="Immich Dashboard">
+                        <div class="media-caption">Immich Photo Backup</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="../projectwiki/media/nextclouddashboard.jpg" alt="Nextcloud Dashboard">
+                        <div class="media-caption">Nextcloud Interface</div>
+                    </div>
                 </div>
-
-                <!-- Cryptomining Card -->
-                <div class="category-card" onclick="location.href='cryptomining/'">
-                    <h3 class="card-title">Cryptomining</h3>
-                    <p class="card-description">Blockchain and mining-related projects</p>
-                    <ul class="card-features">
-                        <li>Mining Dashboard</li>
-                        <li>Wallet Tracker</li>
-                        <li>Profit Calculator</li>
-                    </ul>
+            </div>
+            
+            <div class="content-section" id="pc-builds">
+                <h2>PC Builds</h2>
+                
+                <h3>The Sleeper Truenas Server</h3>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="../projectwiki/media/InsideServerPic.jpg" alt="Inside of Truenas Server">
+                        <div class="media-caption">Internal Components</div>
+                    </div>
+                    <div class="media-item">
+                        <img src="../projectwiki/media/OutsideServerPic.jpg" alt="Outside of Truenas Server">
+                        <div class="media-caption">External View</div>
+                    </div>
                 </div>
+                <p>A sleeper PC build that is aesthetically pleasing on the outside that has an I7 1280p, 32gb of ram, 5 6tb 7200 rpm drives in zfs RaidZ2 with two 1tb ssds caching to make the read speed faster. An external 2.5 GB ethernet usbc port for faster network speeds. An EVGA 850 GQ 80+ Gold PSU, and finally, a Sparkle intel arc a380. This runs on truenas scale os.</p>
+                
+                <h3>My First PC Build</h3>
+                <div class="youtube-embed">
+                    <iframe src="https://www.youtube.com/embed/Dy8u6NfQJfw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p>This build was made in 2016, I was only 14 years old and was very proud of it. I believe it came with a Ryzen 1500x, 16gb of ram, and a rx 580. Used it in this configuration for around 4 years.</p>
+            </div>
+            
+            <div class="content-section" id="programs-scripts">
+                <h2>Programs/Scripts</h2>
+                
+                <h3>GatewayIP Script</h3>
+                <img src="../projectwiki/media/LockGatewayScript.jpg" alt="Gateway IP Script" class="content-image">
+                <p>An issue that occured while I was using truenas was that the gateway ip address kept getting changed. As of now I couldn't find the root cause of this, but I already made a fix by creating a .sh file that statically chooses the gateway ip address, its ip address, etc using bash.</p>
+                <p>For some reason the networking UI that truenas offers did not work which is why I had to resort to using the shell. I also made a crontab which automates when scripts are run to open it everytime it boots and whenever it detects a change in any of the networking settings. Ensuring that the setting stays as it should.</p>
+                
+                <h3>DDNS Script</h3>
+                <img src="../projectwiki/media/DDNSScript.jpg" alt="DDNS Script" class="content-image">
+                <p>This script helps automate my DNS provider whenever my public ip address changes using bash. Whenever it changes, the script takes the new public ip and uses Cloudflare's API to update the ip address in order to have all of my services I exposed to the internet continue to work. If I want to add more services in the future, all I have to do is add the service to the subdomain variable and wait a few minutes for everything to update.</p>
             </div>
         </main>
     </div>
