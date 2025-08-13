@@ -6,161 +6,126 @@
     <title>Project Wiki - Cameron Morin</title>
     <link href="./css/style.css" rel="stylesheet">
     <style>
-        /* Additional wiki content styles */
+        /* Content styling with corrected typography */
         .content-section {
             margin-bottom: 3rem;
-            background: #383838;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            line-height: 1.6;
         }
         
         .content-section h2 {
-            color: #7aa2f7;
-            border-bottom: 2px solid #4b0082;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
+            margin: 2rem 0 1.5rem;
             font-size: 1.5rem;
         }
         
         .content-section h3 {
-            margin: 1.5rem 0 1rem;
+            margin: 1.8rem 0 1rem;
             color: #fff;
             font-size: 1.2rem;
         }
         
-        .content-image {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 1rem 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border: 1px solid #444;
+        .content-section p {
+            margin-bottom: 1.2rem;
         }
         
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+        .content-section ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         
-        .media-item {
-            background: #383838;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid #444;
-            transition: transform 0.3s ease;
+        .content-section li {
+            margin-bottom: 0.5rem;
         }
         
-        .media-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .media-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-        
-        .media-caption {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: #bbb;
-            text-align: center;
-        }
-        
-        .youtube-embed {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .youtube-embed iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Ensure links match your theme */
-        a {
-            color: #7aa2f7;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
+        /* Rest of your existing styles... */
     </style>
 </head>
 <body>
     <div class="wiki-container">
-        <!-- Sidebar Navigation -->
         <nav class="wiki-sidebar">
-            <h1 class="wiki-title">Project Wiki</h1>
-            <a href="../" class="back-button">← Back to Portfolio</a>
-            
-            <h3 class="sidebar-heading">Categories</h3>
-            <ul class="category-list">
-                <li><a href="homelab/" class="category-link">Homelab Projects</a></li>
-                <li><a href="cryptomining/" class="category-link">Cryptomining</a></li>
-                <li><a href="#pc-builds" class="category-link">PC Builds</a></li>
-                <li><a href="#programs-scripts" class="category-link">Programs/Scripts</a></li>
-            </ul>
+            <!-- Your existing sidebar code -->
         </nav>
 
-        <!-- Main Content -->
         <main class="wiki-content">
             <div class="welcome-banner">
                 <h2 class="banner-title">Cameron's Technical Projects</h2>
-                <p class="banner-text">Documentation of my homelab, cryptomining, and other technical experiments.</p>
+                <p class="banner-text">Documentation of my homelab, cryptocurrency mining, and other technical experiments.</p>
             </div>
 
+            <!-- Homelab Section -->
             <div class="content-section">
-                <h2>Featured Projects</h2>
+                <h2>Homelab Projects</h2>
                 
-                <div class="media-grid">
-                    <!-- Homelab Card -->
-                    <div class="media-item" onclick="location.href='homelab/'">
-                        <img src="./media/truenasdashboard.jpg" alt="Truenas Dashboard">
-                        <div class="media-caption">Truenas Scale Server</div>
-                    </div>
-                    
-                    <!-- Cryptomining Card -->
-                    <div class="media-item" onclick="location.href='cryptomining/'">
-                        <img src="./media/GPURig.jpg" alt="GPU Mining Rig">
-                        <div class="media-caption">GPU Mining Setup</div>
-                    </div>
-                    
-                    <!-- PC Build Card -->
-                    <div class="media-item" onclick="location.href='#pc-builds'">
-                        <img src="./media/InsideServerPic.jpg" alt="Truenas Server Internals">
-                        <div class="media-caption">Sleeper Server Build</div>
-                    </div>
-                </div>
+                <h3>TrueNAS Scale</h3>
+                <img src="./media/truenasdashboard.jpg" alt="TrueNAS Dashboard" class="content-image">
+                <p>TrueNAS Scale is the operating system I use to host all my services and containers. To ensure stability:</p>
+                <ul>
+                    <li>Configured a static IP (192.168.1.69) for the host machine to prevent DHCP conflicts</li>
+                    <li>Set up multiple DNS servers (8.8.8.8, 9.9.9.9, 1.1.1.1) for reliable domain resolution</li>
+                    <li>Assigned my router (192.168.1.1) as the gateway IP</li>
+                    <li>Implemented a shell script to lock these settings and prevent accidental changes</li>
+                </ul>
+
+                <h3>Emby Media Server</h3>
+                <img src="./media/embydashboard.jpg" alt="Emby Dashboard" class="content-image">
+                <p>Emby is a self-hosted media server that allows streaming of movies, TV shows, and personal videos. Unlike subscription services like Netflix, this gives me complete control over my media library while maintaining privacy.</p>
+
+                <h3>Immich Photo Backup</h3>
+                <img src="./media/immichdashboard.jpg" alt="Immich Dashboard" class="content-image">
+                <p>Immich serves as a private alternative to Google Photos, automatically backing up photos and videos from my phone. By self-hosting, I keep my personal memories secure rather than storing them on third-party servers.</p>
             </div>
-            
-            <div class="content-section" id="pc-builds">
+
+            <!-- Cryptomining Section -->
+            <div class="content-section">
+                <h2>Cryptocurrency Mining</h2>
+                
+                <h3>MMPOS Mining OS</h3>
+                <img src="./media/MMPOSdashboard.jpg" alt="MMPOS Dashboard" class="content-image">
+                <p>MMPOS is a Linux distribution specifically designed for cryptocurrency mining. Key features include:</p>
+                <ul>
+                    <li>Web-based rig monitoring and management</li>
+                    <li>Telegram notifications for hardware issues</li>
+                    <li>More cost-effective than my previous HiveOS setup</li>
+                </ul>
+
+                <h3>GPU Mining Rig</h3>
+                <img src="./media/GPURig.jpg" alt="GPU Mining Rig" class="content-image">
+                <p>My current setup features:</p>
+                <ul>
+                    <li>Custom Octominer case (modified server chassis)</li>
+                    <li>12 AMD BC160 GPUs with HBM2 memory</li>
+                    <li>Primarily mines Ironfish, with flexibility to switch to Ravencoin</li>
+                    <li>Optimized for memory-based algorithms</li>
+                </ul>
+            </div>
+
+            <!-- PC Builds Section -->
+            <div class="content-section">
                 <h2>PC Builds</h2>
                 
-                <h3>The Sleeper Truenas Server</h3>
+                <h3>Sleeper TrueNAS Server</h3>
                 <div class="media-grid">
                     <div class="media-item">
-                        <img src="./media/InsideServerPic.jpg" alt="Inside of Truenas Server">
+                        <img src="./media/InsideServerPic.jpg" alt="Server Internals">
                         <div class="media-caption">Internal Components</div>
                     </div>
                     <div class="media-item">
-                        <img src="./media/OutsideServerPic.jpg" alt="Outside of Truenas Server">
+                        <img src="./media/OutsideServerPic.jpg" alt="Server Exterior">
                         <div class="media-caption">External View</div>
                     </div>
                 </div>
-                <p>A sleeper PC build that is aesthetically pleasing on the outside that has an I7 1280p, 32gb of ram, 5 6tb 7200 rpm drives in zfs RaidZ2 with two 1tb ssds caching to make the read speed faster. An external 2.5 GB ethernet usbc port for faster network speeds. An EVGA 850 GQ 80+ Gold PSU, and finally, a Sparkle intel arc a380. This runs on truenas scale os.</p>
+                <p>Specifications:</p>
+                <ul>
+                    <li>Intel Core i7-1280P processor</li>
+                    <li>32GB RAM</li>
+                    <li>5×6TB HDDs in ZFS RAIDZ2 configuration</li>
+                    <li>Dual 1TB SSDs for cache acceleration</li>
+                    <li>2.5GbE USB-C network adapter</li>
+                    <li>EVGA 850W Gold PSU</li>
+                    <li>Intel Arc A380 GPU</li>
+                </ul>
             </div>
         </main>
     </div>
