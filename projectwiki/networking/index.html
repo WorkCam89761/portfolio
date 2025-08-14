@@ -1,1 +1,184 @@
-<!--placeholder-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking | Cameron Morin</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        .networking-section {
+            margin: 3rem 0;
+        }
+        .networking-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .networking-details {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-container">
+        <nav class="wiki-sidebar">
+            <h1 class="wiki-title">Networking</h1>
+            <a href="../" class="back-button">← Back to Wiki</a>
+        </nav>
+
+        <main class="wiki-content">
+            <div class="welcome-banner">
+                <h2 class="banner-title">Network Infrastructure</h2>
+                <p class="banner-text">Secure and optimized network configuration</p>
+            </div>
+
+            <!-- Cloudflare DNS Section -->
+            <section class="networking-section">
+                <h2>Cloudflare DNS</h2>
+                <img src="../media/networking/cloudflare-dns.opti.png" 
+                     alt="Cloudflare DNS Dashboard" 
+                     class="networking-image"
+                     loading="lazy">
+                
+                <div class="networking-details">
+                    <h3>Configuration</h3>
+                    <ul>
+                        <li><strong>Domain:</strong> mersielab.xyz</li>
+                        <li><strong>Proxy Status:</strong> DNS and CDN enabled</li>
+                        <li><strong>Security:</strong> Always Use HTTPS + Under Attack Mode</li>
+                        <li><strong>Records:</strong> A, AAAA, CNAME, MX</li>
+                    </ul>
+                    
+                    <div class="protocol-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">DNS Type</div>
+                            <div>Proxied</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">TTL</div>
+                            <div>Auto (1 min)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">SSL</div>
+                            <div>Full (Strict)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WireGuard VPN Section -->
+            <section class="networking-section">
+                <h2>WireGuard VPN</h2>
+                <img src="../media/networking/wireguard-config.opti.png" 
+                     alt="WireGuard Configuration" 
+                     class="networking-image"
+                     loading="lazy">
+                
+                <div class="networking-details">
+                    <h3>Technical Specs</h3>
+                    <ul>
+                        <li><strong>Port:</strong> UDP 51820</li>
+                        <li><strong>Clients:</strong> 5 devices (Phone, Laptop, etc.)</li>
+                        <li><strong>Throughput:</strong> ~250Mbps</li>
+                        <li><strong>Authentication:</strong> Public/Private Key</li>
+                    </ul>
+                    
+                    <h3>Peer Configuration</h3>
+                    <div class="code-showcase">
+                        <pre><code>[Interface]
+PrivateKey = [REDACTED]
+Address = 10.8.0.1/24
+ListenPort = 51820
+
+[Peer]
+PublicKey = [CLIENT_PUBKEY]
+AllowedIPs = 10.8.0.2/32</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nginx Proxy Manager Section -->
+            <section class="networking-section">
+                <h2>Nginx Proxy Manager</h2>
+                <img src="../media/networking/npm-interface.opti.png" 
+                     alt="NPM Dashboard" 
+                     class="networking-image"
+                     loading="lazy">
+                
+                <div class="networking-details">
+                    <h3>Proxy Hosts</h3>
+                    <ul>
+                        <li><strong>Services:</strong> Emby, Nextcloud, TrueNAS</li>
+                        <li><strong>Ports:</strong> 80 → 443 redirect</li>
+                        <li><strong>SSL:</strong> Let's Encrypt wildcard</li>
+                        <li><strong>Access Control:</strong> IP whitelist</li>
+                    </ul>
+                    
+                    <div class="protocol-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">HTTP/2</div>
+                            <div>Enabled</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Caching</div>
+                            <div>1GB RAM</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Block Exploits</div>
+                            <div>Enabled</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DD-WRT Router Section -->
+            <section class="networking-section">
+                <h2>DD-WRT Router</h2>
+                <img src="../media/networking/ddwrt-router.opti.png" 
+                     alt="DD-WRT Interface" 
+                     class="networking-image"
+                     loading="lazy">
+                
+                <div class="networking-details">
+                    <h3>Router Configuration</h3>
+                    <ul>
+                        <li><strong>Model:</strong> Netgear R7000</li>
+                        <li><strong>Firmware:</strong> DD-WRT v3.0-r53250</li>
+                        <li><strong>Security:</strong> Custom iptables rules</li>
+                        <li><strong>VLANs:</strong> Main, IoT, Guest</li>
+                    </ul>
+                    
+                    <h3>Key Features</h3>
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">QoS</div>
+                            <div>Prioritize VoIP</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">TX Power</div>
+                            <div>70mW (WiFi)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Port Forwarding</div>
+                            <div>443 → NPM</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
