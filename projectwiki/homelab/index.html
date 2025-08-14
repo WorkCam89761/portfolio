@@ -83,20 +83,20 @@
              loading="lazy">
     </div>
     
-    <p>Primary NAS and container host running on custom hardware with the following configuration:</p>
+    <p>My primary NAS and container host running on a custom PC I made with the following configuration:</p>
     
     <div class="spec-grid">
         <div class="spec-item">
-            <div class="spec-label">Host IP</div>
-            <div>192.168.1.69 (Static)</div>
+            <div class="spec-label">CPU</div>
+            <div>I7-1280p</div>
         </div>
         <div class="spec-item">
-            <div class="spec-label">DNS Servers</div>
-            <div>8.8.8.8, 9.9.9.9, 1.1.1.1</div>
+            <div class="spec-label">RAM</div>
+            <div>32gb of ddr4 ram</div>
         </div>
         <div class="spec-item">
-            <div class="spec-label">Gateway</div>
-            <div>192.168.1.1</div>
+            <div class="spec-label">GPU</div>
+            <div>Intel Arc A380</div>
         </div>
         <div class="spec-item">
             <div class="spec-label">Storage</div>
@@ -110,8 +110,8 @@
     
     <h3>Key Features</h3>
     <ul>
-        <li>Static IP configuration prevents DHCP conflicts</li>
-        <li>Multiple DNS servers for reliable resolution</li>
+        <li>NVME caching for faster read/write</li>
+        <li>ARC Optimizatation uses RAM for filesystem cache</li>
         <li>Hosts all Docker containers and VMs</li>
         <li>ZFS filesystem with data integrity checks</li>
     </ul>
@@ -170,32 +170,6 @@
                     <li>RAW photo support</li>
                 </ul>
             </section>
-            <!-- SMB Shares Section -->
-<section id="smb" class="tech-specs">
-    <h2>SMB Shares</h2>
-    <div class="image-container">
-        <img src="../media/homelab/smbshare.opti.jpg" 
-             alt="SMB Share Configuration" 
-             class="content-image"
-             loading="lazy">
-    </div>
-    <p>Network file sharing with these features:</p>
-    <div class="spec-grid">
-        <div class="spec-item">
-            <div class="spec-label">Protocol</div>
-            <div>SMB 3.1.1</div>
-        </div>
-        <div class="spec-item">
-            <div class="spec-label">Clients</div>
-            <div>Windows/Mac/Linux</div>
-        </div>
-    </div>
-    <ul>
-        <li>User-based permission controls</li>
-        <li>Fast local network transfers</li>
-        <li>Integrated with TrueNAS permissions</li>
-    </ul>
-</section>
         </main>
     </div>
 </body>
