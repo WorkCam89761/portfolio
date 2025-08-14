@@ -3,8 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homelab Projects | Cameron Morin</title>
+    <title>Homelab Documentation | Cameron Morin</title>
     <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Technical Documentation Styles */
+        .tech-specs {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .spec-item {
+            background: #383838;
+            padding: 0.8rem;
+            border-radius: 6px;
+        }
+        
+        .spec-label {
+            color: var(--link-color);
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .config-code {
+            font-family: 'Courier New', monospace;
+            background: #1e1e1e;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+    </style>
 </head>
 <body>
     <div class="wiki-container">
@@ -19,59 +57,134 @@
                 <li><a href="#immich">Immich</a></li>
                 <li><a href="#nextcloud">Nextcloud</a></li>
                 <li><a href="#crafty">Crafty-4</a></li>
+                <li><a href="#smb">SMB Shares</a></li>
             </ul>
         </nav>
 
         <main class="wiki-content">
             <div class="welcome-banner">
-                <h2 class="banner-title">Homelab Projects</h2>
-                <p class="banner-text">Self-hosted services and infrastructure</p>
+                <h2 class="banner-title">Homelab Infrastructure</h2>
+                <p class="banner-text">Detailed documentation of self-hosted services and configurations</p>
             </div>
 
             <!-- TrueNAS Section -->
-            <div class="service-card" id="truenas">
+            <section id="truenas" class="tech-specs">
                 <h2>TrueNAS Scale</h2>
                 <div class="image-container">
                     <img src="../media/homelab/truenas-dashboard.opti.png" 
                          alt="TrueNAS Dashboard" 
                          class="content-image"
                          loading="lazy">
-                    <p class="image-caption">Dashboard showing storage pools and system health</p>
                 </div>
-                <p>My primary NAS and container host running on custom hardware:</p>
+                
+                <p>Primary NAS and container host running on custom hardware with the following configuration:</p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Host IP</div>
+                        <div>192.168.1.69 (Static)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">DNS Servers</div>
+                        <div>8.8.8.8, 9.9.9.9, 1.1.1.1</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Gateway</div>
+                        <div>192.168.1.1</div>
+                    </div>
+                </div>
+                
+                <h3>Network Configuration Script</h3>
+                <div class="config-code">
+                    <pre>#!/bin/bash
+# Lock network settings
+ip addr add 192.168.1.69/24 dev eth0
+ip route add default via 192.168.1.1
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+echo "nameserver 9.9.9.9" >> /etc/resolv.conf</pre>
+                </div>
+                
+                <p>This configuration ensures stable networking even if VMs attempt to modify settings. The script runs at boot via cronjob.</p>
+            </section>
+
+            <!-- Emby Section -->
+            <section id="emby" class="tech-specs">
+                <h2>Emby Media Server</h2>
+                <div class="image-container">
+                    <img src="../media/homelab/emby-interface.opti.png" 
+                         alt="Emby Interface" 
+                         class="content-image"
+                         loading="lazy">
+                </div>
+                
+                <p>Self-hosted alternative to commercial streaming services with these capabilities:</p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Media Formats</div>
+                        <div>4K HDR, HEVC, AV1</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Transcoding</div>
+                        <div>Intel QuickSync + GPU</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Users</div>
+                        <div>Family (5) + Friends (3)</div>
+                    </div>
+                </div>
+                
+                <h3>Key Benefits</h3>
                 <ul>
-                    <li>ZFS storage pool with 5x6TB drives in RAIDZ2</li>
-                    <li>Hosts all Docker containers and VMs</li>
-                    <li>Static IP configuration with gateway monitoring</li>
+                    <li>Complete ownership of media library</li>
+                    <li>No subscription fees or content restrictions</li>
+                    <li>Automated metadata fetching</li>
+                    <li>Hardware-accelerated transcoding</li>
                 </ul>
-            </div>
+            </section>
 
-            <!-- Service Grid -->
-            <div class="service-grid">
-                <!-- Emby -->
-                <div class="service-card" id="emby">
-                    <h3>Emby Media Server</h3>
-                    <div class="image-container">
-                        <img src="../media/homelab/emby-interface.opti.png" 
-                             alt="Emby Interface"
-                             class="content-image"
-                             loading="lazy">
-                        <p class="image-caption">Media library interface</p>
+            <!-- Additional Sections (Immich, Nextcloud, etc.) -->
+            <section id="immich" class="tech-specs">
+                <h2>Immich Photo Backup</h2>
+                <div class="image-container">
+                    <img src="../media/homelab/immich-backup.opti.png" 
+                         alt="Immich Interface" 
+                         class="content-image"
+                         loading="lazy">
+                </div>
+                <p>Private alternative to Google Photos featuring:</p>
+                <ul>
+                    <li>Automatic phone backup (Android/iOS)</li>
+                    <li>Facial recognition</li>
+                    <li>Album sharing</li>
+                    <li>RAW photo support</li>
+                </ul>
+            </section>
+
+            <!-- Networking Section -->
+            <section id="networking" class="tech-specs">
+                <h2>Network Infrastructure</h2>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Router</div>
+                        <div>DD-WRT (v3.0-r53250)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Firewall</div>
+                        <div>Custom iptables rules</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">VLANs</div>
+                        <div>3 (Main, IoT, Guest)</div>
                     </div>
                 </div>
-
-                <!-- Immich -->
-                <div class="service-card" id="immich">
-                    <h3>Immich</h3>
-                    <div class="image-container">
-                        <img src="../media/homelab/immich-backup.opti.png" 
-                             alt="Immich Photo Backup"
-                             class="content-image"
-                             loading="lazy">
-                        <p class="image-caption">Photo backup interface</p>
-                    </div>
-                </div>
-            </div>
+                <h3>Security Measures</h3>
+                <ul>
+                    <li>Isolated IoT network</li>
+                    <li>MAC address filtering</li>
+                    <li>WireGuard VPN remote access</li>
+                </ul>
+            </section>
         </main>
     </div>
 </body>
