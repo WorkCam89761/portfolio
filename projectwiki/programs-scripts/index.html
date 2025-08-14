@@ -1,1 +1,76 @@
-<!--placeholder-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripts & Automation | Cameron Morin</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        .script-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .script-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .script-image {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-container">
+        <nav class="wiki-sidebar">
+            <h1 class="wiki-title">Scripts</h1>
+            <a href="../" class="back-button">← Back to Wiki</a>
+        </nav>
+
+        <main class="wiki-content">
+            <div class="welcome-banner">
+                <h2 class="banner-title">System Automation Scripts</h2>
+                <p class="banner-text">Essential utilities for homelab management</p>
+            </div>
+
+            <div class="script-showcase">
+                <!-- DDNS Script -->
+                <div class="script-card">
+                    <h3>DDNS Updater</h3>
+                    <img src="../media/scripts/ddns-script.opti.png" 
+                         alt="DDNS Script Screenshot" 
+                         class="script-image"
+                         loading="lazy">
+                    <p><strong>Function:</strong> Automatically updates DNS records when public IP changes</p>
+                    <ul>
+                        <li>Runs hourly via cron scheduler</li>
+                        <li>Integrates with Cloudflare API</li>
+                        <li>Logs changes to /var/log/ddns.log</li>
+                    </ul>
+                </div>
+
+                <!-- Gateway Fix -->
+                <div class="script-card">
+                    <h3>Gateway IP Locker</h3>
+                    <img src="../media/scripts/gateway-fix.opti.png" 
+                         alt="Gateway Fix Script Screenshot" 
+                         class="script-image"
+                         loading="lazy">
+                    <p><strong>Function:</strong> Maintains static network configuration</p>
+                    <ul>
+                        <li>Prevents unauthorized gateway changes</li>
+                        <li>Runs at system boot and every 5 minutes</li>
+                        <li>Sends alerts via local notification system</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
