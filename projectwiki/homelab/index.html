@@ -42,6 +42,12 @@
             overflow-x: auto;
             margin: 1rem 0;
         }
+.back-to-top {
+    display: block;
+    text-align: right;
+    margin-top: 1rem;
+    color: var(--link-color);
+}
     </style>
 </head>
 <body>
@@ -67,45 +73,49 @@
                 <p class="banner-text">Detailed documentation of self-hosted services and configurations</p>
             </div>
 
-            <!-- TrueNAS Section -->
-            <section id="truenas" class="tech-specs">
-                <h2>TrueNAS Scale</h2>
-                <div class="image-container">
-                    <img src="../media/homelab/truenas-dashboard.opti.png" 
-                         alt="TrueNAS Dashboard" 
-                         class="content-image"
-                         loading="lazy">
-                </div>
-                
-                <p>Primary NAS and container host running on custom hardware with the following configuration:</p>
-                
-                <div class="spec-grid">
-                    <div class="spec-item">
-                        <div class="spec-label">Host IP</div>
-                        <div>192.168.1.69 (Static)</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">DNS Servers</div>
-                        <div>8.8.8.8, 9.9.9.9, 1.1.1.1</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Gateway</div>
-                        <div>192.168.1.1</div>
-                    </div>
-                </div>
-                
-                <h3>Network Configuration Script</h3>
-                <div class="config-code">
-                    <pre>#!/bin/bash
-# Lock network settings
-ip addr add 192.168.1.69/24 dev eth0
-ip route add default via 192.168.1.1
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
-echo "nameserver 9.9.9.9" >> /etc/resolv.conf</pre>
-                </div>
-                
-                <p>This configuration ensures stable networking even if VMs attempt to modify settings. The script runs at boot via cronjob.</p>
-            </section>
+          <!-- TrueNAS Section -->
+<section id="truenas" class="tech-specs">
+    <h2>TrueNAS Scale</h2>
+    <div class="image-container">
+        <img src="../media/homelab/truenas-dashboard.opti.png" 
+             alt="TrueNAS Dashboard" 
+             class="content-image"
+             loading="lazy">
+    </div>
+    
+    <p>Primary NAS and container host running on custom hardware with the following configuration:</p>
+    
+    <div class="spec-grid">
+        <div class="spec-item">
+            <div class="spec-label">Host IP</div>
+            <div>192.168.1.69 (Static)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">DNS Servers</div>
+            <div>8.8.8.8, 9.9.9.9, 1.1.1.1</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Gateway</div>
+            <div>192.168.1.1</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Storage</div>
+            <div>5x6TB HDDs (ZFS RAIDZ2)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Cache</div>
+            <div>2x1TB NVMe SSDs</div>
+        </div>
+    </div>
+    
+    <h3>Key Features</h3>
+    <ul>
+        <li>Static IP configuration prevents DHCP conflicts</li>
+        <li>Multiple DNS servers for reliable resolution</li>
+        <li>Hosts all Docker containers and VMs</li>
+        <li>ZFS filesystem with data integrity checks</li>
+    </ul>
+</section>
 
             <!-- Emby Section -->
             <section id="emby" class="tech-specs">
@@ -160,31 +170,32 @@ echo "nameserver 9.9.9.9" >> /etc/resolv.conf</pre>
                     <li>RAW photo support</li>
                 </ul>
             </section>
-
-            <!-- Networking Section -->
-            <section id="networking" class="tech-specs">
-                <h2>Network Infrastructure</h2>
-                <div class="spec-grid">
-                    <div class="spec-item">
-                        <div class="spec-label">Router</div>
-                        <div>DD-WRT (v3.0-r53250)</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">Firewall</div>
-                        <div>Custom iptables rules</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-label">VLANs</div>
-                        <div>3 (Main, IoT, Guest)</div>
-                    </div>
-                </div>
-                <h3>Security Measures</h3>
-                <ul>
-                    <li>Isolated IoT network</li>
-                    <li>MAC address filtering</li>
-                    <li>WireGuard VPN remote access</li>
-                </ul>
-            </section>
+            <!-- SMB Shares Section -->
+<section id="smb" class="tech-specs">
+    <h2>SMB Shares</h2>
+    <div class="image-container">
+        <img src="../media/homelab/smbshare.opti.jpg" 
+             alt="SMB Share Configuration" 
+             class="content-image"
+             loading="lazy">
+    </div>
+    <p>Network file sharing with these features:</p>
+    <div class="spec-grid">
+        <div class="spec-item">
+            <div class="spec-label">Protocol</div>
+            <div>SMB 3.1.1</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Clients</div>
+            <div>Windows/Mac/Linux</div>
+        </div>
+    </div>
+    <ul>
+        <li>User-based permission controls</li>
+        <li>Fast local network transfers</li>
+        <li>Integrated with TrueNAS permissions</li>
+    </ul>
+</section>
         </main>
     </div>
 </body>
