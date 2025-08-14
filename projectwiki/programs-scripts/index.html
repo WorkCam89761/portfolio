@@ -6,23 +6,23 @@
     <title>Scripts & Automation | Cameron Morin</title>
     <link href="../css/style.css" rel="stylesheet">
     <style>
-        .script-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .script-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
+        .script-section {
+            margin: 3rem 0;
         }
         .script-image {
             width: 100%;
-            border-radius: 6px;
-            margin-bottom: 1rem;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 1.5rem 0;
             border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .script-details {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -39,36 +39,54 @@
                 <p class="banner-text">Essential utilities for homelab management</p>
             </div>
 
-            <div class="script-showcase">
-                <!-- DDNS Script -->
-                <div class="script-card">
-                    <h3>DDNS Updater</h3>
-                    <img src="../media/scripts/ddns-script.opti.png" 
-                         alt="DDNS Script Screenshot" 
-                         class="script-image"
-                         loading="lazy">
-                    <p><strong>Function:</strong> Automatically updates DNS records when public IP changes</p>
+            <!-- DDNS Script -->
+            <section class="script-section">
+                <h2>DDNS Updater</h2>
+                <img src="../media/scripts/ddns-script.opti.png" 
+                     alt="DDNS Script Code Screenshot" 
+                     class="script-image"
+                     loading="lazy">
+                
+                <div class="script-details">
+                    <h3>Technical Details</h3>
                     <ul>
-                        <li>Runs hourly via cron scheduler</li>
-                        <li>Integrates with Cloudflare API</li>
-                        <li>Logs changes to /var/log/ddns.log</li>
+                        <li><strong>Purpose:</strong> Automatically updates Cloudflare DNS when public IP changes</li>
+                        <li><strong>Frequency:</strong> Runs every five minutes via cron job</li>
+                        <li><strong>Dependencies:</strong> curl, jq, mailutils</li>
                     </ul>
+                    
+                    <h3>Example Cron Entry</h3>
+                    <div class="code-showcase">
+                        <pre><code>*/5 * * * * /usr/local/bin/ddns-updater.sh</code></pre>
+                    </div>
                 </div>
+            </section>
 
-                <!-- Gateway Fix -->
-                <div class="script-card">
-                    <h3>Gateway IP Locker</h3>
-                    <img src="../media/scripts/gateway-fix.opti.png" 
-                         alt="Gateway Fix Script Screenshot" 
-                         class="script-image"
-                         loading="lazy">
-                    <p><strong>Function:</strong> Maintains static network configuration</p>
+            <!-- Gateway Fix Script -->
+            <section class="script-section">
+                <h2>Gateway IP Locker</h2>
+                <img src="../media/scripts/gateway-fix.opti.png" 
+                     alt="Gateway Fix Script Screenshot" 
+                     class="script-image"
+                     loading="lazy">
+                
+                <div class="script-details">
+                    <h3>Technical Details</h3>
                     <ul>
-                        <li>Prevents unauthorized gateway changes</li>
-                        <li>Runs at system boot and every 5 minutes</li>
-                        <li>Sends alerts via local notification system</li>
+                        <li><strong>Purpose:</strong> Maintains static network configuration</li>
+                        <li><strong>Frequency:</strong> Runs at boot + every 5 minutes</li>
+                        <li><strong>Checks:</strong> Gateway IP, DNS servers, interface settings</li>
+                        <li><strong>Alert Method:</strong> System notifications</li>
                     </ul>
                 </div>
+            </section>
+
+            <div class="tech-specs">
+                <h3>Future Scripts</h3>
+                <ul>
+                    <li><strong>JobAutoApply Bot:</strong> Automated job applications (Python)</li>
+                    <li><strong>Minecraft SCADA:</strong> Real-time server monitoring</li>
+                </ul>
             </div>
         </main>
     </div>
