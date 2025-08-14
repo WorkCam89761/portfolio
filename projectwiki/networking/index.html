@@ -143,41 +143,67 @@ AllowedIPs = 10.8.0.2/32</code></pre>
                     </div>
                 </div>
             </section>
+           <!-- DD-WRT Router Section -->
+<section class="networking-section">
+    <h2>DD-WRT Router</h2>
+    <img src="../media/networking/ddwrt-router.opti.png" 
+         alt="DD-WRT Interface" 
+         class="networking-image"
+         loading="lazy">
+    
+    <div class="networking-details">
+        <h3>Firewall Configuration</h3>
+        <div class="code-showcase">
+            <pre><code># Allow LAN devices to access TrueNAS
+iptables -A FORWARD -s 192.168.1.0/24 -d 192.168.1.69 -j ACCEPT
 
-            <!-- DD-WRT Router Section -->
-            <section class="networking-section">
-                <h2>DD-WRT Router</h2>
-                <img src="../media/networking/ddwrt-router.opti.png" 
-                     alt="DD-WRT Interface" 
-                     class="networking-image"
-                     loading="lazy">
-                
-                <div class="networking-details">
-                    <h3>Router Configuration</h3>
-                    <ul>
-                        <li><strong>Model:</strong> Netgear R7000</li>
-                        <li><strong>Firmware:</strong> DD-WRT v3.0-r53250</li>
-                        <li><strong>Security:</strong> Custom iptables rules</li>
-                        <li><strong>VLANs:</strong> Main, IoT, Guest</li>
-                    </ul>
-                    
-                    <h3>Key Features</h3>
-                    <div class="spec-grid">
-                        <div class="spec-item">
-                            <div class="spec-label">QoS</div>
-                            <div>Prioritize VoIP</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">TX Power</div>
-                            <div>70mW (WiFi)</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Port Forwarding</div>
-                            <div>443 → NPM</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+# Block TrueNAS from initiating connections to LAN
+iptables -A FORWARD -s 192.168.1.69 -d 192.168.1.0/24 ! -d 192.168.1.69 -j DROP
+
+# Allow TrueNAS outbound WAN traffic
+iptables -A FORWARD -s 192.168.1.69 -o vlan2 -j ACCEPT
+
+# Allow established connections
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT</code></pre>
+        </div>
+        
+        <h3>Port Forwarding Rules</h3>
+        <div class="spec-grid">
+            <div class="spec-item">
+                <div class="spec-label">443 (HTTPS)</div>
+                <div>→ Nginx Proxy Manager</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">51820 (UDP)</div>
+                <div>→ WireGuard VPN</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">25565</div>
+                <div>→ Minecraft Server</div>
+            </div>
+        </div>
+        
+        <h3>Security Measures</h3>
+        <ul>
+            <li><strong>Isolated Traffic:</strong> TrueNAS can't initiate LAN connections</li>
+            <li><strong>Selective Forwarding:</strong> Only essential ports exposed</li>
+            <li><strong>State Tracking:</strong> Only allows established connections</li>
+            <li><strong>WAN Restrictions:</strong> No inbound traffic except forwarded ports</li>
+        </ul>
+        
+        <h3>Additional iptables Rules</h3>
+        <div class="code-showcase">
+            <pre><code># Default drop policy
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT ACCEPT
+
+# Allow local traffic
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A FORWARD -i lo -j ACCEPT</code></pre>
+        </div>
+    </div>
+</section>
         </main>
     </div>
 </body>
