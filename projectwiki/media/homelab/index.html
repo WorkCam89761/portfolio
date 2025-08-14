@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homelab Projects | Cameron Morin</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        .service-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-container">
+        <nav class="wiki-sidebar">
+            <h1 class="wiki-title">Homelab</h1>
+            <a href="../" class="back-button">← Back to Wiki</a>
+            
+            <h3 class="sidebar-heading">Services</h3>
+            <ul class="category-list">
+                <li><a href="#truenas">TrueNAS</a></li>
+                <li><a href="#emby">Emby</a></li>
+                <li><a href="#immich">Immich</a></li>
+                <li><a href="#nextcloud">Nextcloud</a></li>
+                <li><a href="#crafty">Crafty-4</a></li>
+            </ul>
+        </nav>
+
+        <main class="wiki-content">
+            <div class="welcome-banner">
+                <h2 class="banner-title">Homelab Projects</h2>
+                <p class="banner-text">Self-hosted services and infrastructure</p>
+            </div>
+
+            <!-- TrueNAS Section -->
+            <div class="service-card" id="truenas">
+                <h2>TrueNAS Scale</h2>
+                <img src="../media/homelab/truenas-dashboard.opti.png" 
+                     alt="TrueNAS Dashboard" 
+                     class="content-image"
+                     loading="lazy">
+                <p>My primary NAS and container host running on custom hardware:</p>
+                <ul>
+                    <li>ZFS storage pool with 5x6TB drives</li>
+                    <li>Hosts all Docker containers and VMs</li>
+                    <li>Static IP configuration with failover</li>
+                </ul>
+            </div>
+
+            <!-- Emby Section -->
+            <div class="service-card" id="emby">
+                <h2>Emby Media Server</h2>
+                <img src="../media/homelab/emby-interface.opti.png" 
+                     alt="Emby Interface" 
+                     class="content-image"
+                     loading="lazy">
+                <p>Self-hosted alternative to Plex/Netflix:</p>
+                <ul>
+                    <li>4K transcoding capability</li>
+                    <li>Family shared libraries</li>
+                    <li>Automated metadata fetching</li>
+                </ul>
+            </div>
+
+            <!-- Service Grid -->
+            <div class="service-grid">
+                <!-- Immich -->
+                <div class="service-card" id="immich">
+                    <h3>Immich</h3>
+                    <img src="../media/homelab/immich-backup.opti.png" 
+                         alt="Immich Photo Backup"
+                         loading="lazy">
+                    <p>Google Photos alternative with facial recognition</p>
+                </div>
+
+                <!-- Nextcloud -->
+                <div class="service-card" id="nextcloud">
+                    <h3>Nextcloud</h3>
+                    <img src="../media/homelab/nextcloud-ui.opti.png" 
+                         alt="Nextcloud Interface"
+                         loading="lazy">
+                    <p>File sync, calendars, and productivity tools</p>
+                </div>
+
+                <!-- Crafty-4 -->
+                <div class="service-card" id="crafty">
+                    <h3>Crafty-4</h3>
+                    <img src="../media/homelab/crafly-4.opti.png" 
+                         alt="Crafty-4 Minecraft Manager"
+                         loading="lazy">
+                    <p>Web-based Minecraft server management</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
