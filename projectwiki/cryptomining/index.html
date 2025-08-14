@@ -1,1 +1,161 @@
-<!--placeholder-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptomining | Cameron Morin</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        .mining-section {
+            margin: 3rem 0;
+        }
+        .mining-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .rig-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .profit-calculator {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-container">
+        <nav class="wiki-sidebar">
+            <h1 class="wiki-title">Cryptomining</h1>
+            <a href="../" class="back-button">← Back to Wiki</a>
+        </nav>
+
+        <main class="wiki-content">
+            <div class="welcome-banner">
+                <h2 class="banner-title">Mining Operations</h2>
+                <p class="banner-text">Hardware configurations and performance metrics</p>
+            </div>
+
+            <!-- GPU Mining Rig -->
+            <section class="mining-section">
+                <h2>GPU Mining Rig</h2>
+                <img src="../media/cryptomining/gpu-rig-overview.opti.jpg" 
+                     alt="12-GPU mining rig overview" 
+                     class="mining-image"
+                     loading="lazy">
+                
+                <div class="networking-details">
+                    <h3>Hardware Specifications</h3>
+                    <div class="rig-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">GPUs</div>
+                            <div>12x AMD BC160</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Memory</div>
+                            <div>HBM2 (8GB each)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Hashrate</div>
+                            <div>~1.2 GH/s</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Power</div>
+                            <div>1800W at wall</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Current Configuration</h3>
+                    <ul>
+                        <li><strong>Primary Coin:</strong> Ironfish (IRON)</li>
+                        <li><strong>Secondary Coin:</strong> Ravencoin (RVN)</li>
+                        <li><strong>OS:</strong> MMPOS Linux</li>
+                        <li><strong>Cooling:</strong> Open-air chassis with box fans</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- MMPOS Dashboard -->
+            <section class="mining-section">
+                <h2>MMPOS Management</h2>
+                <img src="../media/cryptomining/mmpos-dashboard.opti.png" 
+                     alt="MMPOS web dashboard" 
+                     class="mining-image"
+                     loading="lazy">
+                
+                <div class="networking-details">
+                    <h3>Monitoring Features</h3>
+                    <div class="rig-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Alerts</div>
+                            <div>Telegram notifications</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Remote Access</div>
+                            <div>Web interface</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Auto-Reboot</div>
+                            <div>On GPU failure</div>
+                        </div>
+                    </div>
+                    
+                    <div class="profit-calculator">
+                        <h3>Profitability Estimate</h3>
+                        <ul>
+                            <li><strong>Daily:</strong> ~$8.50 (IRON)</li>
+                            <li><strong>Power Cost:</strong> $3.60/day (@ $0.20/kWh)</li>
+                            <li><strong>Net Daily:</strong> $4.90</li>
+                            <li><strong>ROI:</strong> ~14 months</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CPU Mining Section -->
+            <section class="mining-section">
+                <h2>CPU Mining Rigs</h2>
+                <img src="../media/cryptomining/cpu-rig-setup.opti.jpg" 
+                     alt="CPU mining setup" 
+                     class="mining-image"
+                     loading="lazy">
+                
+                <div class="networking-details">
+                    <h3>System Configurations</h3>
+                    <div class="rig-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Rig 1</div>
+                            <div>Ryzen 3900X (12C/24T)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Rig 2</div>
+                            <div>Ryzen 3900X (12C/24T)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Rig 3</div>
+                            <div>Ryzen 3900X (12C/24T)</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Mining Strategy</h3>
+                    <ul>
+                        <li><strong>Algorithm:</strong> RandomX (Monero)</li>
+                        <li><strong>Pool:</strong> MoneroOcean (auto-switching)</li>
+                        <li><strong>Hashrate:</strong> ~15 KH/s per rig</li>
+                        <li><strong>Power:</strong> 180W per rig</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
