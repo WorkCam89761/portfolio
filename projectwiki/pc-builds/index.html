@@ -1,1 +1,272 @@
-<!--placeholder-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builds | Cameron Morin</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        .build-section {
+            margin: 3rem 0;
+        }
+        .build-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .build-image {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .build-image:hover {
+            transform: scale(1.02);
+        }
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .youtube-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1.5rem 0;
+        }
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-container">
+        <nav class="wiki-sidebar">
+            <h1 class="wiki-title">PC Builds</h1>
+            <a href="../" class="back-button">← Back to Wiki</a>
+        </nav>
+
+        <main class="wiki-content">
+            <div class="welcome-banner">
+                <h2 class="banner-title">Custom PC Builds</h2>
+                <p class="banner-text">Detailed specifications of my personal computer systems</p>
+            </div>
+
+            <!-- The Sleeper TrueNAS Server -->
+            <section class="build-section">
+                <h2>The Sleeper TrueNAS Server</h2>
+                <div class="build-gallery">
+                    <div>
+                        <img src="../media/pc-builds/truenas-external.opti.jpg" 
+                             alt="TrueNAS server external view showing retro case" 
+                             class="build-image"
+                             loading="lazy">
+                        <p class="image-caption">Classic sleeper case exterior</p>
+                    </div>
+                    <div>
+                        <img src="../media/pc-builds/truenas-internal.opti.jpg" 
+                             alt="TrueNAS server internal components showing modern hardware" 
+                             class="build-image"
+                             loading="lazy">
+                        <p class="image-caption">Modern hardware interior</p>
+                    </div>
+                </div>
+                
+                <p>This sleeper PC combines retro aesthetics with modern performance. It features an Intel i7-1280P processor, 32GB of RAM, and five 6TB 7200 RPM drives configured in ZFS RAIDZ2 with two 1TB SSDs for caching to accelerate read speeds.</p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">CPU</div>
+                        <div>Intel i7-1280P</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">RAM</div>
+                        <div>32GB DDR4</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Storage</div>
+                        <div>5×6TB HDDs (ZFS RAIDZ2)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Cache</div>
+                        <div>2×1TB Sata SSDs</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">GPU</div>
+                        <div>Sparkle Intel Arc A380</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">PSU</div>
+                        <div>EVGA 850 GQ 80+ Gold</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Network</div>
+                        <div>2.5GbE USB-C adapter</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">OS</div>
+                        <div>TrueNAS Scale</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My First PC Build -->
+            <section class="build-section">
+                <h2>My First PC Build (2016)</h2>
+                <div class="youtube-embed">
+                    <iframe src="https://www.youtube.com/embed/Dy8u6NfQJfw" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            title="My First PC Build (2016)"></iframe>
+                </div>
+                
+                <p>Built when I was just 14 years old, this system holds special significance as my introduction to PC building. I used this setup for approximately four years before upgrading.</p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">CPU</div>
+                        <div>AMD Ryzen 5 1500X</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">RAM</div>
+                        <div>16GB DDR4</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">GPU</div>
+                        <div>AMD Radeon RX 580</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Years in Service</div>
+                        <div>2016–2020</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main PC -->
+            <section class="build-section">
+                <h2>Main Workstation</h2>
+                <img src="../media/pc-builds/main-pc-build.opti.jpg" 
+                     alt="Compact ITX main workstation PC" 
+                     class="build-image"
+                     loading="lazy">
+                
+                <p>My current daily driver is this compact ITX powerhouse featuring an AMD Ryzen 9 7950X, 32GB of DDR5 RAM, and a Radeon 6900 XT. Running Ubuntu Linux, it handles all my development work, content creation, and occasional gaming with ease.</p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">CPU</div>
+                        <div>AMD Ryzen 9 7950X</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">RAM</div>
+                        <div>32GB DDR5</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">GPU</div>
+                        <div>AMD Radeon 6900XT</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Form Factor</div>
+                        <div>Mini-ITX</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">OS</div>
+                        <div>Ubuntu Linux</div>
+                    </div>
+                </div>
+                
+                <h3>Primary Uses</h3>
+                <ul>
+                    <li>Software development environment</li>
+                    <li>4K video editing workstation</li>
+                    <li>High-performance computing tasks</li>
+                    <li>Linux gaming when time permits</li>
+                </ul>
+            </section>
+
+            <!-- Guest PC -->
+            <section class="build-section">
+                <h2>Guest/Secondary PC</h2>
+                <img src="../media/pc-builds/guestpc.opti.jpg" 
+                     alt="Guest PC with RGB lighting" 
+                     class="build-image"
+                     loading="lazy">
+                
+                <p>Originally my main system, this now serves as an overqualified guest PC.</p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">CPU</div>
+                        <div>AMD Ryzen 9 3950X</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">RAM</div>
+                        <div>32GB DDR4</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">GPU</div>
+                        <div>AMD Radeon 6600XT</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">OS</div>
+                        <div>Windows 11</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customized Xeon Workstation -->
+            <section class="build-section">
+                <h2>Security-Focused Xeon Workstation</h2>
+                <img src="../media/pc-builds/xeon-workstation.opti.jpg" 
+                     alt="Xeon workstation for cryptocurrency storage" 
+                     class="build-image"
+                     loading="lazy">
+                
+                <p>This specialized workstation serves as my ultra-secure cryptocurrency wallet storage. When complete, it will feature mirrored hard drives (maybe SSDs) in RAID 1 configuration for maximum redundancy. The system runs a hardened Proxmox installation and will be completely air-gapped from all networks.</p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">CPU</div>
+                        <div>Intel Xeon E5-2680 v3</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">RAM</div>
+                        <div>32GB DDR3 ECC</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Storage (Planned)</div>
+                        <div>3×1-2TB HDDs or 3x1TB SSDs  (RAID 1)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">GPU</div>
+                        <div>None (Headless operation)</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">OS</div>
+                        <div>Hardened Proxmox VE</div>
+                    </div>
+                </div>
+                
+                <h3>Security Measures</h3>
+                <ul>
+                    <li>Complete network isolation (air-gapped)</li>
+                    <li>Physical write-protect switches for storage</li>
+                    <li>Multi-layer encryption for all sensitive data</li>
+                    <li>Custom firmware modifications</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
