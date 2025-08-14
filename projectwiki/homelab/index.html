@@ -48,6 +48,25 @@
     margin-top: 1rem;
     color: var(--link-color);
 }
+.tech-specs h2 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-specs h3 {
+    color: var(--link-color);
+    margin: 1.5rem 0 1rem;
+}
+
+.tech-specs ul {
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.tech-specs li {
+    margin-bottom: 0.5rem;
+}
     </style>
 </head>
 <body>
@@ -152,8 +171,7 @@
                     <li>Hardware-accelerated transcoding</li>
                 </ul>
             </section>
-
-            <!-- Additional Sections (Immich, Nextcloud, etc.) -->
+            
             <section id="immich" class="tech-specs">
                 <h2>Immich Photo Backup</h2>
                 <div class="image-container">
@@ -168,6 +186,88 @@
                     <li>Facial recognition</li>
                     <li>Album sharing</li>
                     <li>RAW photo support</li>
+
+                    <!-- Nextcloud Section -->
+<section id="nextcloud" class="tech-specs">
+    <h2>Nextcloud</h2>
+    <div class="image-container">
+        <img src="../media/homelab/nextcloud-ui.opti.png" 
+             alt="Nextcloud Interface" 
+             class="content-image"
+             loading="lazy">
+    </div>
+    
+    <p>Private cloud platform with these configured services:</p>
+    
+    <div class="spec-grid">
+        <div class="spec-item">
+            <div class="spec-label">Version</div>
+            <div>Nextcloud 27</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Storage</div>
+            <div>Mounted TrueNAS SMB shares</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Users</div>
+            <div>5 active accounts</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Apps</div>
+            <div>Files, Calendar, Contacts</div>
+        </div>
+    </div>
+    
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>End-to-end encryption</strong> for sensitive files</li>
+        <li><strong>Collaborative editing</strong> with OnlyOffice integration</li>
+        <li><strong>Mobile sync</strong> for iOS/Android devices</li>
+        <li><strong>Automated backups</strong> to TrueNAS nightly</li>
+        <li><strong>2FA support</strong> for all user accounts</li>
+    </ul>
+</section>
+                    <!-- Crafty-4 Section -->
+<section id="crafty" class="tech-specs">
+    <h2>Crafty-4 Minecraft Manager</h2>
+    <div class="image-container">
+        <img src="../media/homelab/crafty-4.opti.png" 
+             alt="Crafty-4 Interface" 
+             class="content-image"
+             loading="lazy">
+    </div>
+    
+    <p>Web-based Minecraft server management with these active instances:</p>
+    
+    <div class="spec-grid">
+        <div class="spec-item">
+            <div class="spec-label">Version</div>
+            <div>Crafty-4 3.2.1</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Servers</div>
+            <div>3 (Survival, Creative, Modded)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">RAM Allocation</div>
+            <div>8GB total (Docker container)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Backups</div>
+            <div>Daily to TrueNAS</div>
+        </div>
+    </div>
+    
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>Web-based console</strong> for all servers</li>
+        <li><strong>One-click modpack installation</strong></li>
+        <li><strong>Player analytics</strong> and activity tracking</li>
+        <li><strong>Automatic restarts</strong> during low activity</li>
+        <li><strong>Discord integration</strong> for status alerts</li>
+    </ul>
+</section>
+                    
                 </ul>
             </section>
         </main>
